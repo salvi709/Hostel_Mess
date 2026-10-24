@@ -1,0 +1,6 @@
+{
+  "name": "MessMate",
+  "description": "Smart Hostel Mess Feedback & Menu Optimization Platform with Firebase Authentication, real-time menus, ratings, complaints, and polls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

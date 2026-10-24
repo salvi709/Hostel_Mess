@@ -1,0 +1,249 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "User profile containing role, identity, and assigned mess location",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 200 },
+        "role": { "type": "string", "enum": ["student", "admin"] },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "collegeName": { "type": "string", "maxLength": 150 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "messName": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["uid", "name", "email", "role", "collegeId", "messId", "createdAt"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Authorized administrator privilege mapping",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "maxLength": 128 },
+        "email": { "type": "string", "maxLength": 200 },
+        "role": { "type": "string", "enum": ["admin"] },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "collegeName": { "type": "string", "maxLength": 150 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "plan": { "type": "string", "enum": ["starter", "pro"] },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["uid", "email", "role", "collegeId", "createdAt"]
+    },
+    "Subscription": {
+      "title": "Subscription",
+      "description": "Hostel college mess subscription tier details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "institutionId": { "type": "string", "maxLength": 128 },
+        "adminUid": { "type": "string", "maxLength": 128 },
+        "plan": { "type": "string", "enum": ["starter", "pro"] },
+        "priceMonthly": { "type": "number" },
+        "maxMesses": { "type": "integer" },
+        "status": { "type": "string", "enum": ["active", "trial", "pending"] },
+        "isDemo": { "type": "boolean" },
+        "startDate": { "type": "string", "maxLength": 50 },
+        "renewalDate": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "institutionId", "adminUid", "plan", "priceMonthly", "maxMesses", "status", "startDate"]
+    },
+    "Institution": {
+      "title": "Institution",
+      "description": "Colleges or Universities hosting dining halls",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "location": { "type": "string", "maxLength": 150 },
+        "code": { "type": "string", "maxLength": 30 },
+        "officialEmail": { "type": "string", "maxLength": 200 },
+        "contactPhone": { "type": "string", "maxLength": 50 },
+        "ownerUid": { "type": "string", "maxLength": 128 },
+        "status": { "type": "string", "enum": ["active", "pending"] },
+        "plan": { "type": "string", "enum": ["starter", "pro"] },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "name", "location", "code", "ownerUid", "status", "createdAt"]
+    },
+    "Mess": {
+      "title": "Mess",
+      "description": "Hostel mess or dining hall location under a college",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 150 },
+        "locationBlock": { "type": "string", "maxLength": 150 },
+        "description": { "type": "string", "maxLength": 500 },
+        "timezone": { "type": "string", "maxLength": 60 },
+        "active": { "type": "boolean" },
+        "breakfastTime": { "type": "string", "maxLength": 30 },
+        "lunchTime": { "type": "string", "maxLength": 30 },
+        "snacksTime": { "type": "string", "maxLength": 30 },
+        "dinnerTime": { "type": "string", "maxLength": 30 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "collegeId", "name", "active", "createdAt"]
+    },
+    "Menu": {
+      "title": "Menu",
+      "description": "Scheduled meal menus for breakfast, lunch, snacks, or dinner",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "day": { "type": "integer" },
+        "mealType": { "type": "string", "enum": ["breakfast", "lunch", "snacks", "dinner"] },
+        "dishes": { "type": "string", "maxLength": 500 },
+        "labels": { "type": "string", "maxLength": 100 },
+        "startTime": { "type": "string", "maxLength": 10 },
+        "endTime": { "type": "string", "maxLength": 10 },
+        "effectiveDate": { "type": "string", "maxLength": 30 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "messId", "collegeId", "day", "mealType", "dishes", "startTime", "endTime", "createdAt"]
+    },
+    "MealRating": {
+      "title": "MealRating",
+      "description": "Daily student ratings for served meals",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "menuId": { "type": "string", "maxLength": 128 },
+        "mealType": { "type": "string", "maxLength": 30 },
+        "serviceDate": { "type": "string", "maxLength": 30 },
+        "score": { "type": "integer" },
+        "taste": { "type": "integer" },
+        "quality": { "type": "integer" },
+        "quantity": { "type": "integer" },
+        "hygiene": { "type": "integer" },
+        "comment": { "type": "string", "maxLength": 500 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "actorName": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "messId", "collegeId", "mealType", "serviceDate", "score", "userId", "createdAt"]
+    },
+    "Feedback": {
+      "title": "Feedback",
+      "description": "Student complaints and suggestions with resolution workflow",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "userName": { "type": "string", "maxLength": 100 },
+        "kind": { "type": "string", "enum": ["complaint", "suggestion", "general"] },
+        "category": { "type": "string", "maxLength": 60 },
+        "body": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["Submitted", "In Review", "Resolved"] },
+        "response": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "messId", "collegeId", "userId", "userName", "kind", "category", "body", "status", "createdAt"]
+    },
+    "Poll": {
+      "title": "Poll",
+      "description": "Mess committee and admin voting polls for students",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "question": { "type": "string", "maxLength": 300 },
+        "options": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["active", "closed", "draft"] },
+        "closesAt": { "type": "string", "maxLength": 50 },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "createdBy": { "type": "string", "maxLength": 128 }
+      },
+      "required": ["id", "messId", "collegeId", "question", "options", "status", "createdAt"]
+    },
+    "PollResponse": {
+      "title": "PollResponse",
+      "description": "Individual student votes on polls",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "pollId": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "userId": { "type": "string", "maxLength": 128 },
+        "choice": { "type": "integer" },
+        "votedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "pollId", "messId", "userId", "choice", "votedAt"]
+    },
+    "Announcement": {
+      "title": "Announcement",
+      "description": "Notices and updates posted by mess management",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string", "maxLength": 128 },
+        "messId": { "type": "string", "maxLength": 128 },
+        "collegeId": { "type": "string", "maxLength": 128 },
+        "title": { "type": "string", "maxLength": 200 },
+        "body": { "type": "string", "maxLength": 2000 },
+        "priority": { "type": "string", "enum": ["normal", "urgent"] },
+        "authorName": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["id", "messId", "collegeId", "title", "body", "priority", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles stored by Firebase auth UID"
+    },
+    "/admins/{adminId}": {
+      "schema": "Admin",
+      "description": "Authorized administrator documents"
+    },
+    "/subscriptions/{subscriptionId}": {
+      "schema": "Subscription",
+      "description": "Mess plan subscription and limits"
+    },
+    "/institutions/{institutionId}": {
+      "schema": "Institution",
+      "description": "Educational institutions and colleges created by admins"
+    },
+    "/messes/{messId}": {
+      "schema": "Mess",
+      "description": "Hostel mess dining halls under institutions"
+    },
+    "/menus/{menuId}": {
+      "schema": "Menu",
+      "description": "Weekly and daily meal schedules"
+    },
+    "/mealRatings/{ratingId}": {
+      "schema": "MealRating",
+      "description": "Daily student ratings for meals"
+    },
+    "/feedback/{feedbackId}": {
+      "schema": "Feedback",
+      "description": "Student complaints and suggestions"
+    },
+    "/polls/{pollId}": {
+      "schema": "Poll",
+      "description": "Community polls regarding food choices"
+    },
+    "/pollResponses/{responseId}": {
+      "schema": "PollResponse",
+      "description": "Student votes on polls"
+    },
+    "/announcements/{announcementId}": {
+      "schema": "Announcement",
+      "description": "Management notices and alerts"
+    }
+  }
+}
