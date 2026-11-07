@@ -6,7 +6,8 @@ import {
   setPersistence 
 } from 'firebase/auth';
 import { 
-  getFirestore, 
+  initializeFirestore,
+  getFirestore,
   doc, 
   getDocFromServer 
 } from 'firebase/firestore';
@@ -26,8 +27,10 @@ googleProvider.setCustomParameters({
   prompt: 'select_account'
 });
 
-// Initialize Cloud Firestore with the configured Database ID
-export const db = getFirestore(app, firebaseConfig.firestoreDatabaseId);
+// Initialize Cloud Firestore with forced long-polling to prevent iframe/proxy WebChannel disconnects
+export const db = initializeFirestore(app, {
+  experimentalForceLongPolling: true,
+}, firebaseConfig.firestoreDatabaseId);
 
 // Error Handling per Firebase Integration Skill specification
 export enum OperationType {
@@ -82,15 +85,20 @@ export async function testConnection(): Promise<boolean> {
   try {
     await getDocFromServer(doc(db, 'test', 'connection'));
     return true;
-  } catch (error) {
-    if (error instanceof Error && error.message.includes('the client is offline')) {
-      console.warn('Firebase client is offline or network is unreachable.');
+  } catch (error: unknown) {
+    const err = error as { code?: string; message?: string };
+    // Permission-denied or not-found confirms successful round-trip connectivity to Cloud Firestore
+    if (err?.code === 'permission-denied' || err?.code === 'not-found') {
+      return true;
+    }
+    if (err?.code === 'unavailable' || (err?.message && err.message.includes('client is offline'))) {
+      console.warn('Firebase client is currently operating in offline mode. It will sync once network is reachable.');
     }
     return false;
   }
 }
 
 // Initial probe
-testConnection();
+testConnection().catch(() => {});
 
 export default app;

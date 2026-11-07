@@ -198,9 +198,21 @@
         "createdAt": { "type": "string", "maxLength": 50 }
       },
       "required": ["id", "messId", "collegeId", "title", "body", "priority", "createdAt"]
+    },
+    "TestConnection": {
+      "title": "TestConnection",
+      "description": "System health probe document for initial connection verification",
+      "type": "object",
+      "properties": {
+        "status": { "type": "string", "maxLength": 50 }
+      }
     }
   },
   "firestore": {
+    "/test/{docId}": {
+      "schema": "TestConnection",
+      "description": "Health probe document for initial connectivity verification"
+    },
     "/users/{userId}": {
       "schema": "User",
       "description": "User profiles stored by Firebase auth UID"

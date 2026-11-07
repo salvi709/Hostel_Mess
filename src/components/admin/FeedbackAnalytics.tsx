@@ -223,59 +223,59 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
         
         {/* Total Responses */}
-        <div className="bg-white p-5 rounded-xl border border-[#E5E8E3] shadow-xs space-y-1">
-          <div className="flex items-center justify-between text-xs text-[#6B716D]">
+        <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1">
+          <div className="flex items-center justify-between text-xs text-[#737A74]">
             <span>Total Responses</span>
-            <MessageSquare className="w-4 h-4 text-[#285943]" />
+            <MessageSquare className="w-4 h-4 text-[#244D3C]" />
           </div>
-          <div className="text-3xl font-extrabold text-[#242925] tracking-tight">
+          <div className="text-3xl font-extrabold text-[#292E2A] tracking-tight">
             {totalResponses}
           </div>
-          <div className="text-[11px] text-[#6B716D]">
+          <div className="text-[11px] text-[#737A74]">
             Verified student meal reviews
           </div>
         </div>
 
         {/* Overall Average Rating */}
-        <div className="bg-white p-5 rounded-xl border border-[#E5E8E3] shadow-xs space-y-1">
-          <div className="flex items-center justify-between text-xs text-[#6B716D]">
+        <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1">
+          <div className="flex items-center justify-between text-xs text-[#737A74]">
             <span>Average Meal Rating</span>
-            <Star className="w-4 h-4 fill-[#C87942] text-[#C87942]" />
+            <Star className="w-4 h-4 fill-[#B77950] text-[#B77950]" />
           </div>
-          <div className="text-3xl font-extrabold text-[#285943] tracking-tight flex items-baseline gap-1">
+          <div className="text-3xl font-extrabold text-[#244D3C] tracking-tight flex items-baseline gap-1">
             <span>{totalResponses > 0 ? overallAverage.toFixed(2) : '—'}</span>
-            <span className="text-sm font-normal text-[#6B716D]">/ 5.0</span>
+            <span className="text-sm font-normal text-[#737A74]">/ 5.0</span>
           </div>
-          <div className="text-[11px] text-[#6B716D]">
+          <div className="text-[11px] text-[#737A74]">
             Aggregate satisfaction score
           </div>
         </div>
 
         {/* Normalized Percentage Score */}
-        <div className="bg-white p-5 rounded-xl border border-[#E5E8E3] shadow-xs space-y-1">
-          <div className="flex items-center justify-between text-xs text-[#6B716D]">
+        <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1">
+          <div className="flex items-center justify-between text-xs text-[#737A74]">
             <span>Quality Index</span>
-            <TrendingUp className="w-4 h-4 text-[#285943]" />
+            <TrendingUp className="w-4 h-4 text-[#244D3C]" />
           </div>
-          <div className="text-3xl font-extrabold text-[#242925] tracking-tight flex items-baseline gap-1">
+          <div className="text-3xl font-extrabold text-[#292E2A] tracking-tight flex items-baseline gap-1">
             <span>{totalResponses > 0 ? normalizedScore : 0}</span>
-            <span className="text-sm font-normal text-[#6B716D]">%</span>
+            <span className="text-sm font-normal text-[#737A74]">%</span>
           </div>
-          <div className="text-[11px] text-[#6B716D]">
+          <div className="text-[11px] text-[#737A74]">
             Normalized: (Average / 5) × 100
           </div>
         </div>
 
         {/* Low-Rating Ratio Alert */}
-        <div className="bg-white p-5 rounded-xl border border-[#E5E8E3] shadow-xs space-y-1">
-          <div className="flex items-center justify-between text-xs text-[#6B716D]">
+        <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1">
+          <div className="flex items-center justify-between text-xs text-[#737A74]">
             <span>Attention Flagged (≤ 2★)</span>
-            <AlertTriangle className="w-4 h-4 text-[#C87942]" />
+            <AlertTriangle className="w-4 h-4 text-[#B77950]" />
           </div>
-          <div className="text-3xl font-extrabold text-[#C87942] tracking-tight">
+          <div className="text-3xl font-extrabold text-[#B77950] tracking-tight">
             {messRatings.filter(r => r.score <= 2).length}
           </div>
-          <div className="text-[11px] text-[#6B716D]">
+          <div className="text-[11px] text-[#737A74]">
             Reviews requiring catering inspection
           </div>
         </div>
@@ -286,13 +286,13 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* Criteria Benchmarks (Taste, Quality, Quantity, Hygiene, Overall) */}
-        <div className="lg:col-span-7 bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-5">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E5E8E3]">
+        <div className="lg:col-span-7 bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-5">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-3 border-b border-[#E4E5DE]">
             <div>
-              <h3 className="text-sm font-bold text-[#242925]">
+              <h3 className="text-sm font-bold text-[#292E2A]">
                 Granular Criteria Analysis
               </h3>
-              <p className="text-xs text-[#6B716D]">
+              <p className="text-xs text-[#737A74]">
                 Excludes skipped answers from denominators for mathematical integrity.
               </p>
             </div>
@@ -303,20 +303,20 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
               <div key={crit.name} className="space-y-1.5">
                 <div className="flex items-center justify-between text-xs">
                   <div>
-                    <span className="font-semibold text-[#242925]">{crit.name}</span>
-                    <span className="text-[#6B716D] text-[11px] ml-2">({crit.desc})</span>
+                    <span className="font-semibold text-[#292E2A]">{crit.name}</span>
+                    <span className="text-[#737A74] text-[11px] ml-2">({crit.desc})</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-[11px] text-[#6B716D]">{crit.count} answers</span>
-                    <span className="font-bold text-[#242925] w-12 text-right">{crit.avg} ★</span>
-                    <span className="font-semibold text-[#285943] w-10 text-right">{crit.pct}%</span>
+                    <span className="text-[11px] text-[#737A74]">{crit.count} answers</span>
+                    <span className="font-bold text-[#292E2A] w-12 text-right">{crit.avg} ★</span>
+                    <span className="font-semibold text-[#244D3C] w-10 text-right">{crit.pct}%</span>
                   </div>
                 </div>
 
                 {/* Clean metric bar */}
-                <div className="w-full bg-[#F8F7F3] border border-[#E5E8E3] h-2 rounded-full overflow-hidden">
+                <div className="w-full bg-[#F6F4EE] border border-[#E4E5DE] h-2 rounded-full overflow-hidden">
                   <div 
-                    className="bg-[#285943] h-full transition-all duration-500 rounded-full" 
+                    className="bg-[#244D3C] h-full transition-all duration-500 rounded-full" 
                     style={{ width: `${crit.pct}%` }} 
                   />
                 </div>
@@ -326,38 +326,38 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
         </div>
 
         {/* 1–5 Star Distribution */}
-        <div className="lg:col-span-5 bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-5">
-          <div className="pb-3 border-b border-[#E5E8E3]">
-            <h3 className="text-sm font-bold text-[#242925]">Star Rating Distribution</h3>
-            <p className="text-xs text-[#6B716D]">Counts and percentages across all student ratings</p>
+        <div className="lg:col-span-5 bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-5">
+          <div className="pb-3 border-b border-[#E4E5DE]">
+            <h3 className="text-sm font-bold text-[#292E2A]">Star Rating Distribution</h3>
+            <p className="text-xs text-[#737A74]">Counts and percentages across all student ratings</p>
           </div>
 
           <div className="space-y-3">
             {starDistribution.map((row) => (
               <div key={row.stars} className="flex items-center gap-3 text-xs">
-                <div className="flex items-center gap-1 w-14 shrink-0 font-medium text-[#242925]">
+                <div className="flex items-center gap-1 w-14 shrink-0 font-medium text-[#292E2A]">
                   <span>{row.stars}</span>
-                  <Star className="w-3.5 h-3.5 fill-[#C87942] text-[#C87942]" />
+                  <Star className="w-3.5 h-3.5 fill-[#B77950] text-[#B77950]" />
                 </div>
 
-                <div className="flex-1 bg-[#F8F7F3] border border-[#E5E8E3] h-2.5 rounded-full overflow-hidden">
+                <div className="flex-1 bg-[#F6F4EE] border border-[#E4E5DE] h-2.5 rounded-full overflow-hidden">
                   <div 
                     className={`h-full rounded-full transition-all duration-500 ${
-                      row.stars >= 4 ? 'bg-[#285943]' : row.stars === 3 ? 'bg-amber-600' : 'bg-[#C87942]'
+                      row.stars >= 4 ? 'bg-[#244D3C]' : row.stars === 3 ? 'bg-amber-600' : 'bg-[#B77950]'
                     }`}
                     style={{ width: `${row.pct}%` }} 
                   />
                 </div>
 
                 <div className="flex items-center justify-end gap-2 w-20 shrink-0 text-right text-[11px]">
-                  <span className="font-bold text-[#242925]">{row.pct}%</span>
-                  <span className="text-[#6B716D]">({row.count})</span>
+                  <span className="font-bold text-[#292E2A]">{row.pct}%</span>
+                  <span className="text-[#737A74]">({row.count})</span>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="pt-3 border-t border-[#E5E8E3] text-[11px] text-[#6B716D] flex justify-between">
+          <div className="pt-3 border-t border-[#E4E5DE] text-[11px] text-[#737A74] flex justify-between">
             <span>Positive (4-5★): {starDistribution.filter(s => s.stars >= 4).reduce((sum, s) => sum + s.count, 0)}</span>
             <span>Needs Review (≤2★): {starDistribution.filter(s => s.stars <= 2).reduce((sum, s) => sum + s.count, 0)}</span>
           </div>
@@ -369,28 +369,28 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* Meal-type comparison */}
-        <div className="lg:col-span-6 bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-4">
-          <div className="pb-3 border-b border-[#E5E8E3]">
-            <h3 className="text-sm font-bold text-[#242925]">Meal Course Performance</h3>
-            <p className="text-xs text-[#6B716D]">Comparative ratings for Breakfast, Lunch, Snacks, and Dinner</p>
+        <div className="lg:col-span-6 bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-4">
+          <div className="pb-3 border-b border-[#E4E5DE]">
+            <h3 className="text-sm font-bold text-[#292E2A]">Meal Course Performance</h3>
+            <p className="text-xs text-[#737A74]">Comparative ratings for Breakfast, Lunch, Snacks, and Dinner</p>
           </div>
 
           <div className="grid grid-cols-2 gap-3">
             {mealBreakdown.map((m) => (
-              <div key={m.mealType} className="p-3.5 rounded-lg bg-[#F8F7F3] border border-[#E5E8E3] space-y-2">
+              <div key={m.mealType} className="p-3.5 rounded-lg bg-[#F6F4EE] border border-[#E4E5DE] space-y-2">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold capitalize text-[#242925]">{m.mealType}</span>
-                  <span className="text-[10px] text-[#6B716D]">{m.count} ratings</span>
+                  <span className="font-bold capitalize text-[#292E2A]">{m.mealType}</span>
+                  <span className="text-[10px] text-[#737A74]">{m.count} ratings</span>
                 </div>
                 <div className="flex items-baseline justify-between">
-                  <div className="text-xl font-extrabold text-[#285943]">
-                    {m.avg} <span className="text-xs font-normal text-[#6B716D]">★</span>
+                  <div className="text-xl font-extrabold text-[#244D3C]">
+                    {m.avg} <span className="text-xs font-normal text-[#737A74]">★</span>
                   </div>
-                  <span className="text-xs font-semibold text-[#242925]">{m.pct}%</span>
+                  <span className="text-xs font-semibold text-[#292E2A]">{m.pct}%</span>
                 </div>
-                <div className="w-full bg-white h-1.5 rounded-full overflow-hidden border border-[#E5E8E3]">
+                <div className="w-full bg-white h-1.5 rounded-full overflow-hidden border border-[#E4E5DE]">
                   <div 
-                    className="bg-[#285943] h-full" 
+                    className="bg-[#244D3C] h-full" 
                     style={{ width: `${m.pct}%` }} 
                   />
                 </div>
@@ -400,14 +400,14 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
         </div>
 
         {/* Mess Comparison (if multi-mess exists) */}
-        <div className="lg:col-span-6 bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-[#E5E8E3]">
+        <div className="lg:col-span-6 bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
             <div>
-              <h3 className="text-sm font-bold text-[#242925]">Dining Hall Comparison</h3>
-              <p className="text-xs text-[#6B716D]">Performance across college mess halls</p>
+              <h3 className="text-sm font-bold text-[#292E2A]">Dining Hall Comparison</h3>
+              <p className="text-xs text-[#737A74]">Performance across college mess halls</p>
             </div>
             {messes.length > 1 && (
-              <span className="text-[11px] text-[#6B716D] font-medium">
+              <span className="text-[11px] text-[#737A74] font-medium">
                 {messes.length} Halls Registered
               </span>
             )}
@@ -420,24 +420,24 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                 onClick={() => onSelectMess && onSelectMess(m.messId)}
                 className={`p-3 rounded-lg border flex items-center justify-between gap-3 cursor-pointer transition-colors ${
                   selectedMessFilter === m.messId 
-                    ? 'bg-[#285943]/5 border-[#285943]' 
-                    : 'bg-white border-[#E5E8E3] hover:bg-[#F8F7F3]'
+                    ? 'bg-[#244D3C]/10 border-[#244D3C]' 
+                    : 'bg-white border-[#E4E5DE] hover:bg-[#F6F4EE]'
                 }`}
               >
                 <div>
-                  <div className="text-xs font-bold text-[#242925] flex items-center gap-1.5">
+                  <div className="text-xs font-bold text-[#292E2A] flex items-center gap-1.5">
                     <span>{m.messName}</span>
                     {selectedMessFilter === m.messId && (
-                      <span className="text-[10px] font-semibold text-[#285943] bg-[#285943]/10 px-1.5 rounded-sm">Selected</span>
+                      <span className="text-[10px] font-semibold text-[#244D3C] bg-[#244D3C]/10 px-1.5 rounded-sm">Selected</span>
                     )}
                   </div>
-                  <div className="text-[10px] text-[#6B716D]">{m.location} · {m.count} ratings</div>
+                  <div className="text-[10px] text-[#737A74]">{m.location} · {m.count} ratings</div>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="text-right">
-                    <div className="text-xs font-bold text-[#242925]">{m.avg} ★</div>
-                    <div className="text-[10px] text-[#6B716D]">{m.pct}%</div>
+                    <div className="text-xs font-bold text-[#292E2A]">{m.avg} ★</div>
+                    <div className="text-[10px] text-[#737A74]">{m.pct}%</div>
                   </div>
                 </div>
               </div>
@@ -449,20 +449,20 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
 
       {/* 4. RATING TRENDS OVER TIME */}
       {dateTrends.length > 0 && (
-        <div className="bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-4">
-          <div className="flex items-center justify-between pb-3 border-b border-[#E5E8E3]">
+        <div className="bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-4">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
             <div>
-              <h3 className="text-sm font-bold text-[#242925]">Rating Trends (Recent Serving Dates)</h3>
-              <p className="text-xs text-[#6B716D]">Daily student satisfaction trajectories</p>
+              <h3 className="text-sm font-bold text-[#292E2A]">Rating Trends (Recent Serving Dates)</h3>
+              <p className="text-xs text-[#737A74]">Daily student satisfaction trajectories</p>
             </div>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-7 gap-2">
             {dateTrends.map((d) => (
-              <div key={d.date} className="p-3 rounded-lg bg-[#F8F7F3] border border-[#E5E8E3] text-center space-y-1">
-                <div className="text-[11px] font-semibold text-[#6B716D] truncate">{d.date}</div>
-                <div className="text-base font-extrabold text-[#285943]">{d.avg} ★</div>
-                <div className="text-[10px] text-[#242925]">{d.count} reviews</div>
+              <div key={d.date} className="p-3 rounded-lg bg-[#F6F4EE] border border-[#E4E5DE] text-center space-y-1">
+                <div className="text-[11px] font-semibold text-[#737A74] truncate">{d.date}</div>
+                <div className="text-base font-extrabold text-[#244D3C]">{d.avg} ★</div>
+                <div className="text-[10px] text-[#292E2A]">{d.count} reviews</div>
               </div>
             ))}
           </div>
@@ -470,28 +470,28 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
       )}
 
       {/* 5. FILTERABLE WRITTEN REVIEWS & COMMENTS */}
-      <div className="bg-white p-6 rounded-xl border border-[#E5E8E3] shadow-xs space-y-6">
+      <div className="bg-white p-6 rounded-xl border border-[#E4E5DE] shadow-xs space-y-6">
         
         {/* Filter controls toolbar */}
-        <div className="space-y-3 pb-4 border-b border-[#E5E8E3]">
+        <div className="space-y-3 pb-4 border-b border-[#E4E5DE]">
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
             <div>
-              <h3 className="text-sm font-bold text-[#242925]">
+              <h3 className="text-sm font-bold text-[#292E2A]">
                 Student Written Feedback & Dish Ratings ({filteredReviews.length})
               </h3>
-              <p className="text-xs text-[#6B716D]">
+              <p className="text-xs text-[#737A74]">
                 Inspect specific student notes, identify repeated complaints, and filter low scores.
               </p>
             </div>
 
             {/* Threshold filter segmented buttons */}
-            <div className="flex items-center gap-1 bg-[#F8F7F3] p-1 rounded-lg border border-[#E5E8E3] text-xs">
+            <div className="flex items-center gap-1 bg-[#F6F4EE] p-1 rounded-lg border border-[#E4E5DE] text-xs">
               <button
                 onClick={() => setRatingThresholdFilter('all')}
                 className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
                   ratingThresholdFilter === 'all' 
-                    ? 'bg-white text-[#242925] shadow-xs font-bold' 
-                    : 'text-[#6B716D] hover:text-[#242925]'
+                    ? 'bg-white text-[#292E2A] shadow-xs font-bold' 
+                    : 'text-[#737A74] hover:text-[#292E2A]'
                 }`}
               >
                 All Scores
@@ -501,7 +501,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                 className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
                   ratingThresholdFilter === 'low' 
                     ? 'bg-red-50 text-red-700 shadow-xs font-bold border border-red-200' 
-                    : 'text-[#6B716D] hover:text-[#242925]'
+                    : 'text-[#737A74] hover:text-[#292E2A]'
                 }`}
               >
                 Low (≤ 2★)
@@ -511,7 +511,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                 className={`px-2.5 py-1 rounded-md font-medium transition-colors cursor-pointer ${
                   ratingThresholdFilter === 'high' 
                     ? 'bg-emerald-50 text-emerald-800 shadow-xs font-bold border border-emerald-200' 
-                    : 'text-[#6B716D] hover:text-[#242925]'
+                    : 'text-[#737A74] hover:text-[#292E2A]'
                 }`}
               >
                 High (≥ 4★)
@@ -523,13 +523,13 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
           <div className="grid grid-cols-1 sm:grid-cols-4 gap-3 pt-1">
             {/* Search query */}
             <div className="relative">
-              <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-[#6B716D]" />
+              <Search className="w-3.5 h-3.5 absolute left-3 top-3 text-[#737A74]" />
               <input
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search comments..."
-                className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-white border border-[#E5E8E3] text-[#242925] focus:outline-none focus:border-[#285943]"
+                className="w-full pl-8 pr-3 py-1.5 text-xs rounded-lg bg-white border border-[#E4E5DE] text-[#292E2A] focus:outline-none focus:border-[#244D3C]"
               />
             </div>
 
@@ -537,7 +537,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
             <select
               value={selectedMessFilter}
               onChange={(e) => setSelectedMessFilter(e.target.value)}
-              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E5E8E3] text-[#242925] focus:outline-none focus:border-[#285943] cursor-pointer"
+              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E4E5DE] text-[#292E2A] focus:outline-none focus:border-[#244D3C] cursor-pointer"
             >
               <option value="all">All Mess Halls</option>
               {messes.map(m => (
@@ -549,7 +549,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
             <select
               value={selectedMealFilter}
               onChange={(e) => setSelectedMealFilter(e.target.value)}
-              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E5E8E3] text-[#242925] focus:outline-none focus:border-[#285943] cursor-pointer capitalize"
+              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E4E5DE] text-[#292E2A] focus:outline-none focus:border-[#244D3C] cursor-pointer capitalize"
             >
               <option value="all">All Meals</option>
               <option value="breakfast">Breakfast</option>
@@ -562,7 +562,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
             <select
               value={selectedDateFilter}
               onChange={(e) => setSelectedDateFilter(e.target.value)}
-              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E5E8E3] text-[#242925] focus:outline-none focus:border-[#285943] cursor-pointer"
+              className="px-3 py-1.5 text-xs rounded-lg bg-white border border-[#E4E5DE] text-[#292E2A] focus:outline-none focus:border-[#244D3C] cursor-pointer"
             >
               <option value="all">All Dates</option>
               {uniqueDates.map(d => (
@@ -583,56 +583,56 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                   className={`p-4 rounded-xl border text-xs space-y-2 transition-colors ${
                     r.score <= 2 
                       ? 'bg-red-50/40 border-red-200' 
-                      : 'bg-[#F8F7F3] border-[#E5E8E3]'
+                      : 'bg-[#F6F4EE] border-[#E4E5DE]'
                   }`}
                 >
                   <div className="flex flex-wrap items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <div className="flex items-center gap-1 font-bold text-[#242925]">
+                      <div className="flex items-center gap-1 font-bold text-[#292E2A]">
                         <span>{r.score}</span>
-                        <Star className="w-3.5 h-3.5 fill-[#C87942] text-[#C87942]" />
+                        <Star className="w-3.5 h-3.5 fill-[#B77950] text-[#B77950]" />
                       </div>
-                      <span className="text-[#6B716D]">·</span>
-                      <span className="font-semibold text-[#242925] capitalize">{r.mealType}</span>
+                      <span className="text-[#737A74]">·</span>
+                      <span className="font-semibold text-[#292E2A] capitalize">{r.mealType}</span>
                       {messInfo && (
                         <>
-                          <span className="text-[#6B716D]">·</span>
-                          <span className="text-[#6B716D]">{messInfo.name}</span>
+                          <span className="text-[#737A74]">·</span>
+                          <span className="text-[#737A74]">{messInfo.name}</span>
                         </>
                       )}
-                      <span className="text-[#6B716D]">·</span>
-                      <span className="text-[#6B716D]">{r.serviceDate || r.createdAt?.split('T')[0]}</span>
+                      <span className="text-[#737A74]">·</span>
+                      <span className="text-[#737A74]">{r.serviceDate || r.createdAt?.split('T')[0]}</span>
                     </div>
 
-                    <div className="text-[11px] text-[#6B716D]">
-                      by <span className="font-medium text-[#242925]">{r.actorName || 'Student'}</span>
+                    <div className="text-[11px] text-[#737A74]">
+                      by <span className="font-medium text-[#292E2A]">{r.actorName || 'Student'}</span>
                     </div>
                   </div>
 
                   {/* Comment */}
                   {r.comment ? (
-                    <p className="text-xs text-[#242925] bg-white p-2.5 rounded-lg border border-[#E5E8E3] leading-relaxed">
+                    <p className="text-xs text-[#292E2A] bg-white p-2.5 rounded-lg border border-[#E4E5DE] leading-relaxed">
                       "{r.comment}"
                     </p>
                   ) : (
-                    <p className="text-[11px] text-[#6B716D] italic">
+                    <p className="text-[11px] text-[#737A74] italic">
                       Star rating submitted with no written remarks.
                     </p>
                   )}
 
                   {/* Criteria tags */}
-                  <div className="flex flex-wrap items-center gap-3 text-[10px] text-[#6B716D] pt-1">
-                    {r.taste && <span>Taste: <b className="text-[#242925]">{r.taste}★</b></span>}
-                    {r.quality && <span>Quality: <b className="text-[#242925]">{r.quality}★</b></span>}
-                    {r.quantity && <span>Quantity: <b className="text-[#242925]">{r.quantity}★</b></span>}
-                    {r.hygiene && <span>Hygiene: <b className="text-[#242925]">{r.hygiene}★</b></span>}
+                  <div className="flex flex-wrap items-center gap-3 text-[10px] text-[#737A74] pt-1">
+                    {r.taste && <span>Taste: <b className="text-[#292E2A]">{r.taste}★</b></span>}
+                    {r.quality && <span>Quality: <b className="text-[#292E2A]">{r.quality}★</b></span>}
+                    {r.quantity && <span>Quantity: <b className="text-[#292E2A]">{r.quantity}★</b></span>}
+                    {r.hygiene && <span>Hygiene: <b className="text-[#292E2A]">{r.hygiene}★</b></span>}
                   </div>
                 </div>
               );
             })}
           </div>
         ) : (
-          <div className="text-center py-8 text-xs text-[#6B716D] bg-[#F8F7F3] rounded-xl border border-[#E5E8E3]">
+          <div className="text-center py-8 text-xs text-[#737A74] bg-[#F6F4EE] rounded-xl border border-[#E4E5DE]">
             No meal feedback matches the active filter criteria.
           </div>
         )}

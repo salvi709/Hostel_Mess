@@ -95,35 +95,35 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
   return (
     <div className="space-y-6">
       {/* Header bar explaining preview */}
-      <div className="bg-white p-5 rounded-xl border border-[#E5E8E3] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+      <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2">
-            <Smartphone className="w-5 h-5 text-[#285943]" />
-            <h2 className="text-base font-bold text-[#242925]">Student Mobile Viewport Preview</h2>
+            <Smartphone className="w-5 h-5 text-[#244D3C]" />
+            <h2 className="text-base font-bold text-[#292E2A]">Student Mobile Viewport Preview</h2>
           </div>
-          <p className="text-xs text-[#6B716D] mt-1">
+          <p className="text-xs text-[#737A74] mt-1">
             Simulates how hostel residents experience daily menus, dish rating forms, and polls on mobile devices.
           </p>
         </div>
-        <div className="flex items-center gap-2 text-xs font-semibold px-2.5 py-1 rounded-md bg-[#285943]/10 text-[#285943] border border-[#285943]/20">
+        <div className="flex items-center gap-2 text-xs font-semibold px-2.5 py-1 rounded-md bg-[#244D3C]/10 text-[#244D3C] border border-[#244D3C]/20">
           <Lock className="w-3.5 h-3.5" />
           <span>Interactive Demo (Read-Only Mode)</span>
         </div>
       </div>
 
       {/* Main Container with Mobile Bezel Frame */}
-      <div className="flex justify-center items-center py-4 bg-[#F8F7F3]">
+      <div className="flex justify-center items-center py-4 bg-[#F6F4EE]">
         {/* Phone chassis */}
-        <div className="w-full max-w-[380px] bg-[#242925] rounded-[44px] p-3 shadow-2xl border-4 border-[#242925] ring-1 ring-black/10">
+        <div className="w-full max-w-[380px] bg-[#292E2A] rounded-[44px] p-3 shadow-2xl border-4 border-[#292E2A] ring-1 ring-black/10">
           
           {/* Inner Phone Screen */}
-          <div className="bg-[#F8F7F3] rounded-[36px] overflow-hidden border border-[#E5E8E3] relative flex flex-col h-[740px] select-none">
+          <div className="bg-[#F6F4EE] rounded-[36px] overflow-hidden border border-[#E4E5DE] relative flex flex-col h-[740px] select-none">
             
             {/* Status Bar */}
-            <div className="bg-[#F8F7F3] px-6 pt-3 pb-2 flex items-center justify-between text-[11px] font-semibold text-[#242925] shrink-0 border-b border-[#E5E8E3]">
+            <div className="bg-[#F6F4EE] px-6 pt-3 pb-2 flex items-center justify-between text-[11px] font-semibold text-[#292E2A] shrink-0 border-b border-[#E4E5DE]">
               <span>9:41</span>
               {/* Dynamic Island / Speaker Pill */}
-              <div className="w-20 h-4 bg-[#242925] rounded-full mx-auto" />
+              <div className="w-20 h-4 bg-[#292E2A] rounded-full mx-auto" />
               <div className="flex items-center gap-1.5 text-[10px]">
                 <span>5G</span>
                 <span className="font-bold">100%</span>
@@ -131,7 +131,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
             </div>
 
             {/* Read-Only Watermark Banner */}
-            <div className="bg-[#285943] text-white px-3 py-1 text-[10px] font-medium flex items-center justify-center gap-1.5 shrink-0">
+            <div className="bg-[#244D3C] text-white px-3 py-1 text-[10px] font-medium flex items-center justify-center gap-1.5 shrink-0">
               <Lock className="w-3 h-3" />
               <span>Admin Preview Mode · No live data submitted</span>
             </div>
@@ -142,39 +142,39 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
               {/* Top Bar inside app */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] font-medium text-[#6B716D] uppercase tracking-wider">
+                  <div className="text-[10px] font-medium text-[#737A74] uppercase tracking-wider">
                     {collegeName}
                   </div>
-                  <h3 className="text-sm font-bold text-[#242925] truncate max-w-[200px]">
+                  <h3 className="text-sm font-bold text-[#292E2A] truncate max-w-[200px]">
                     {currentMess?.name || 'Central Hostel Mess'}
                   </h3>
                 </div>
-                <div className="w-7 h-7 rounded-lg bg-[#285943] text-white flex items-center justify-center text-xs font-bold shadow-2xs">
+                <div className="w-7 h-7 rounded-lg bg-[#244D3C] text-white flex items-center justify-center text-xs font-bold shadow-2xs">
                   <UtensilsCrossed className="w-3.5 h-3.5" />
                 </div>
               </div>
 
               {/* Day & Date Indicator */}
-              <div className="flex items-center justify-between text-xs p-2.5 rounded-lg bg-white border border-[#E5E8E3]">
-                <div className="flex items-center gap-1.5 text-[#242925] font-semibold text-xs">
-                  <Calendar className="w-3.5 h-3.5 text-[#285943]" />
+              <div className="flex items-center justify-between text-xs p-2.5 rounded-lg bg-white border border-[#E4E5DE]">
+                <div className="flex items-center gap-1.5 text-[#292E2A] font-semibold text-xs">
+                  <Calendar className="w-3.5 h-3.5 text-[#244D3C]" />
                   <span>{dayName} Menu</span>
                 </div>
-                <span className="text-[10px] text-[#6B716D]">
+                <span className="text-[10px] text-[#737A74]">
                   {new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
                 </span>
               </div>
 
               {/* Meal Selector Tabs (Mobile Segmented Bar) */}
-              <div className="grid grid-cols-4 gap-1 p-1 bg-white rounded-lg border border-[#E5E8E3]">
+              <div className="grid grid-cols-4 gap-1 p-1 bg-white rounded-lg border border-[#E4E5DE]">
                 {(['breakfast', 'lunch', 'snacks', 'dinner'] as MealType[]).map((m) => (
                   <button
                     key={m}
                     onClick={() => setPreviewMealTab(m)}
                     className={`py-1 text-[10px] font-semibold rounded-md capitalize transition-colors ${
                       previewMealTab === m
-                        ? 'bg-[#285943] text-white'
-                        : 'text-[#6B716D] hover:text-[#242925]'
+                        ? 'bg-[#244D3C] text-white'
+                        : 'text-[#737A74] hover:text-[#292E2A]'
                     }`}
                   >
                     {m}
@@ -183,34 +183,34 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
               </div>
 
               {/* Active Meal Card */}
-              <div className="bg-white p-4 rounded-xl border border-[#E5E8E3] shadow-2xs space-y-3">
+              <div className="bg-white p-4 rounded-xl border border-[#E4E5DE] shadow-2xs space-y-3">
                 <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#242925] capitalize">
-                    <ChefHat className="w-3.5 h-3.5 text-[#285943]" />
+                  <div className="flex items-center gap-1.5 text-xs font-bold text-[#292E2A] capitalize">
+                    <ChefHat className="w-3.5 h-3.5 text-[#244D3C]" />
                     <span>{previewMealTab} Course</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[10px] text-[#6B716D]">
-                    <Clock className="w-3 h-3 text-[#285943]" />
+                  <div className="flex items-center gap-1 text-[10px] text-[#737A74]">
+                    <Clock className="w-3 h-3 text-[#244D3C]" />
                     <span>{activeMenuDisplay.time}</span>
                   </div>
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-xs font-bold text-[#242925] leading-snug">
+                  <div className="text-xs font-bold text-[#292E2A] leading-snug">
                     {activeMenuDisplay.dishes}
                   </div>
-                  <div className="text-[10px] text-[#C87942] font-semibold">
+                  <div className="text-[10px] text-[#B77950] font-semibold">
                     {activeMenuDisplay.labels}
                   </div>
                 </div>
 
                 {/* Simulated Rating Widget */}
-                <div className="pt-2 border-t border-[#E5E8E3] space-y-2">
+                <div className="pt-2 border-t border-[#E4E5DE] space-y-2">
                   <div className="flex items-center justify-between text-[11px]">
-                    <span className="font-semibold text-[#242925]">Rate This Meal</span>
-                    <span className="text-[10px] text-[#6B716D]">{previewRating} of 5 Stars</span>
+                    <span className="font-semibold text-[#292E2A]">Rate This Meal</span>
+                    <span className="text-[10px] text-[#737A74]">{previewRating} of 5 Stars</span>
                   </div>
-                  <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-[#F8F7F3] border border-[#E5E8E3]">
+                  <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-[#F6F4EE] border border-[#E4E5DE]">
                     {[1, 2, 3, 4, 5].map((star) => (
                       <button
                         key={star}
@@ -221,8 +221,8 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                         <Star 
                           className={`w-4 h-4 ${
                             star <= previewRating 
-                              ? 'text-[#C87942] fill-[#C87942]' 
-                              : 'text-[#E5E8E3]'
+                              ? 'text-[#B77950] fill-[#B77950]' 
+                              : 'text-[#E4E5DE]'
                           }`} 
                         />
                       </button>
@@ -231,27 +231,27 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
 
                   {/* 4 Criteria Sliders Preview */}
                   <div className="grid grid-cols-2 gap-2 text-[10px] pt-1">
-                    <div className="p-1.5 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] flex justify-between">
-                      <span className="text-[#6B716D]">Taste</span>
-                      <span className="font-bold text-[#242925]">4.7 ★</span>
+                    <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
+                      <span className="text-[#737A74]">Taste</span>
+                      <span className="font-bold text-[#292E2A]">4.7 ★</span>
                     </div>
-                    <div className="p-1.5 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] flex justify-between">
-                      <span className="text-[#6B716D]">Hygiene</span>
-                      <span className="font-bold text-[#242925]">4.9 ★</span>
+                    <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
+                      <span className="text-[#737A74]">Hygiene</span>
+                      <span className="font-bold text-[#292E2A]">4.9 ★</span>
                     </div>
-                    <div className="p-1.5 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] flex justify-between">
-                      <span className="text-[#6B716D]">Quantity</span>
-                      <span className="font-bold text-[#242925]">4.5 ★</span>
+                    <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
+                      <span className="text-[#737A74]">Quantity</span>
+                      <span className="font-bold text-[#292E2A]">4.5 ★</span>
                     </div>
-                    <div className="p-1.5 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] flex justify-between">
-                      <span className="text-[#6B716D]">Quality</span>
-                      <span className="font-bold text-[#242925]">4.6 ★</span>
+                    <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
+                      <span className="text-[#737A74]">Quality</span>
+                      <span className="font-bold text-[#292E2A]">4.6 ★</span>
                     </div>
                   </div>
 
                   <button
                     disabled
-                    className="w-full py-1.5 rounded-md bg-[#E5E8E3] text-[#6B716D] text-[10px] font-semibold cursor-not-allowed flex items-center justify-center gap-1"
+                    className="w-full py-1.5 rounded-md bg-[#E4E5DE] text-[#737A74] text-[10px] font-semibold cursor-not-allowed flex items-center justify-center gap-1"
                   >
                     <Lock className="w-3 h-3" />
                     <span>Submit Rating (Disabled in Preview)</span>
@@ -260,10 +260,10 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
               </div>
 
               {/* Active Poll Widget Preview */}
-              <div className="bg-white p-3.5 rounded-xl border border-[#E5E8E3] space-y-2.5">
+              <div className="bg-white p-3.5 rounded-xl border border-[#E4E5DE] space-y-2.5">
                 <div className="flex items-center justify-between text-xs">
-                  <div className="flex items-center gap-1.5 font-bold text-[#242925]">
-                    <Vote className="w-3.5 h-3.5 text-[#285943]" />
+                  <div className="flex items-center gap-1.5 font-bold text-[#292E2A]">
+                    <Vote className="w-3.5 h-3.5 text-[#244D3C]" />
                     <span className="text-[11px]">Active Food Poll</span>
                   </div>
                   <span className="text-[9px] font-bold text-emerald-800 bg-emerald-100 px-1.5 py-0.5 rounded-sm">
@@ -271,7 +271,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                   </span>
                 </div>
 
-                <div className="text-[11px] font-semibold text-[#242925]">
+                <div className="text-[11px] font-semibold text-[#292E2A]">
                   {activePoll.question}
                 </div>
 
@@ -279,26 +279,26 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                   {pollOptions.map((opt, idx) => (
                     <div
                       key={idx}
-                      className="p-2 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] text-[10px] flex items-center justify-between text-[#242925]"
+                      className="p-2 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] text-[10px] flex items-center justify-between text-[#292E2A]"
                     >
                       <span>{opt}</span>
-                      <span className="text-[#6B716D] font-bold">{idx === 0 ? '62%' : '38%'}</span>
+                      <span className="text-[#737A74] font-bold">{idx === 0 ? '62%' : '38%'}</span>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Recent Announcements Preview */}
-              <div className="bg-white p-3.5 rounded-xl border border-[#E5E8E3] space-y-2">
-                <div className="flex items-center gap-1.5 font-bold text-[#242925] text-[11px]">
-                  <Bell className="w-3.5 h-3.5 text-[#C87942]" />
+              <div className="bg-white p-3.5 rounded-xl border border-[#E4E5DE] space-y-2">
+                <div className="flex items-center gap-1.5 font-bold text-[#292E2A] text-[11px]">
+                  <Bell className="w-3.5 h-3.5 text-[#B77950]" />
                   <span>Mess Notice Board</span>
                 </div>
-                <div className="p-2.5 rounded-md bg-[#F8F7F3] border border-[#E5E8E3] space-y-1">
-                  <div className="text-[10px] font-bold text-[#242925]">
+                <div className="p-2.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] space-y-1">
+                  <div className="text-[10px] font-bold text-[#292E2A]">
                     {announcements.length > 0 ? announcements[0].title : 'Sunday Feast Timing Notice'}
                   </div>
-                  <p className="text-[9px] text-[#6B716D] leading-snug">
+                  <p className="text-[9px] text-[#737A74] leading-snug">
                     {announcements.length > 0 
                       ? announcements[0].body 
                       : 'Special dinner service starts early at 7:30 PM due to the annual hostel sports meet. Extra ice cream counter will be open.'}
@@ -309,8 +309,8 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
             </div>
 
             {/* Bottom Navigation Mock inside Mobile */}
-            <div className="bg-white px-6 py-2.5 border-t border-[#E5E8E3] flex items-center justify-around text-[10px] font-medium text-[#6B716D] shrink-0">
-              <div className="flex flex-col items-center text-[#285943]">
+            <div className="bg-white px-6 py-2.5 border-t border-[#E4E5DE] flex items-center justify-around text-[10px] font-medium text-[#737A74] shrink-0">
+              <div className="flex flex-col items-center text-[#244D3C]">
                 <ChefHat className="w-3.5 h-3.5" />
                 <span className="text-[9px] mt-0.5 font-bold">Menu</span>
               </div>
@@ -326,7 +326,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
 
             {/* Home indicator bar at bottom */}
             <div className="bg-white py-1 flex justify-center shrink-0">
-              <div className="w-32 h-1 bg-[#242925]/30 rounded-full" />
+              <div className="w-32 h-1 bg-[#292E2A]/30 rounded-full" />
             </div>
 
           </div>

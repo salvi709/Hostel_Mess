@@ -30,6 +30,11 @@ service cloud.firestore {
         get(/databases/$(database)/documents/institutions/$(collegeId)).data.ownerUid == request.auth.uid;
     }
 
+    // Health check probe for client connection verification
+    match /test/{docId} {
+      allow read: if true;
+    }
+
     // Users collection
     match /users/{userId} {
       allow get: if isUser(userId) || isAdmin();

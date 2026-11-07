@@ -91,7 +91,7 @@ function MainApp() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FFF9F0] flex flex-col font-sans selection:bg-[#2F6B4F] selection:text-white">
+    <div className="min-h-screen bg-[#F6F4EE] flex flex-col font-sans selection:bg-[#244D3C] selection:text-white">
       {/* Navigation Bar */}
       <Navbar
         onOpenStudentAuth={() => {
@@ -125,8 +125,8 @@ function MainApp() {
       <main className="flex-1">
         {loading && !currentUser ? (
           <div className="min-h-[60vh] flex flex-col items-center justify-center gap-3">
-            <Loader2 className="w-8 h-8 text-[#2F6B4F] animate-spin" />
-            <span className="text-xs font-semibold text-[#747A75]">Connecting to MessMate...</span>
+            <Loader2 className="w-8 h-8 text-[#244D3C] animate-spin" />
+            <span className="text-xs font-medium text-[#737A74]">Connecting to MessMate...</span>
           </div>
         ) : (
           <>

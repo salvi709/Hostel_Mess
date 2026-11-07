@@ -113,32 +113,32 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#292D2A]/70 backdrop-blur-xs">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs">
       <div 
-        className="w-full max-w-md bg-white rounded-3xl shadow-2xl border border-[#2F6B4F]/20 overflow-hidden max-h-[90vh] flex flex-col"
+        className="w-full max-w-md bg-white rounded-xl shadow-xl border border-[#E4E5DE] overflow-hidden max-h-[90vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="bg-[#FFF9F0] px-6 py-5 border-b border-[#2F6B4F]/10 shrink-0">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#E8873A]/15 text-[#E8873A] text-xs font-bold mb-2">
+        <div className="bg-[#F6F4EE] px-6 py-4 border-b border-[#E4E5DE] shrink-0">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-md bg-[#B77950]/15 text-[#B77950] text-[11px] font-semibold mb-1.5">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Almost Done!</span>
           </div>
-          <h2 className="font-bold text-xl text-[#292D2A]">Complete Your Student Profile</h2>
-          <p className="text-xs text-[#747A75] mt-1">
+          <h2 className="font-bold text-base text-[#292E2A]">Complete Your Student Profile</h2>
+          <p className="text-xs text-[#737A74] mt-1">
             Choose your campus institution and hostel dining hall to personalize your daily meal schedules and polls.
           </p>
         </div>
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4 overflow-y-auto flex-1">
           {error && (
-            <div className="p-3 rounded-xl bg-red-50 text-red-700 text-xs border border-red-200">
+            <div className="p-3 rounded-lg bg-red-50 text-red-700 text-xs border border-red-200">
               {error}
             </div>
           )}
 
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-[#292D2A] flex items-center gap-1.5">
-              <User className="w-3.5 h-3.5 text-[#2F6B4F]" />
+            <label className="text-xs font-semibold text-[#292E2A] flex items-center gap-1.5">
+              <User className="w-3.5 h-3.5 text-[#244D3C]" />
               <span>Full Name</span>
             </label>
             <input
@@ -147,42 +147,42 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
               value={name}
               onChange={(e) => setName(e.target.value)}
               placeholder="e.g. Sarthak Salvi"
-              className="w-full px-4 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+              className="w-full px-4 py-2.5 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
             />
           </div>
 
           {/* College Selection with Search */}
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-[#292D2A] flex items-center justify-between">
+            <label className="text-xs font-semibold text-[#292E2A] flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <Building2 className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                <Building2 className="w-3.5 h-3.5 text-[#244D3C]" />
                 <span>Campus / University</span>
               </span>
               {institutions.length > 5 && (
-                <span className="text-[10px] text-[#747A75]">{institutions.length} institutions</span>
+                <span className="text-[10px] text-[#737A74]">{institutions.length} institutions</span>
               )}
             </label>
 
             {institutions.length > 4 && (
               <div className="relative mb-1.5">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#747A75]" />
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#737A74]" />
                 <input
                   type="text"
                   value={collegeSearchQuery}
                   onChange={(e) => setCollegeSearchQuery(e.target.value)}
                   placeholder="Search college by name or city..."
-                  className="w-full pl-8 pr-3 py-1.5 rounded-lg border border-[#2F6B4F]/15 text-xs focus:outline-none focus:border-[#2F6B4F] bg-[#FFF9F0]/40"
+                  className="w-full pl-8 pr-3 py-1.5 rounded-lg border border-[#E4E5DE] text-xs focus:outline-none focus:border-[#244D3C] bg-[#F6F4EE]/60"
                 />
               </div>
             )}
 
             {loadingInstitutions ? (
-              <div className="py-3 px-4 rounded-xl border border-[#2F6B4F]/10 bg-[#FFF9F0]/40 flex items-center justify-center gap-2 text-xs text-[#747A75]">
-                <Loader2 className="w-3.5 h-3.5 animate-spin text-[#2F6B4F]" />
+              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#737A74]">
+                <Loader2 className="w-3.5 h-3.5 animate-spin text-[#244D3C]" />
                 <span>Loading campuses...</span>
               </div>
             ) : filteredColleges.length === 0 ? (
-              <div className="p-3 rounded-xl border border-dashed border-[#2F6B4F]/20 text-xs text-[#747A75] text-center bg-[#FFF9F0]/30">
+              <div className="p-3 rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#737A74] text-center bg-[#F6F4EE]/40">
                 No institutions found matching "{collegeSearchQuery}".
               </div>
             ) : (
@@ -192,7 +192,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
                   const inst = institutions.find(i => i.id === e.target.value) || null;
                   setSelectedCollege(inst);
                 }}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+                className="w-full px-3.5 py-2.5 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
               >
                 {filteredColleges.map((inst) => (
                   <option key={inst.id} value={inst.id}>
@@ -205,23 +205,23 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
 
           {/* Mess Selection */}
           <div className="space-y-1.5">
-            <label className="text-xs font-semibold text-[#292D2A] flex items-center justify-between">
+            <label className="text-xs font-semibold text-[#292E2A] flex items-center justify-between">
               <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                <MapPin className="w-3.5 h-3.5 text-[#244D3C]" />
                 <span>Hostel Mess / Dining Hall</span>
               </span>
               {availableMesses.length > 0 && (
-                <span className="text-[10px] text-[#747A75]">{availableMesses.length} dining halls</span>
+                <span className="text-[10px] text-[#737A74]">{availableMesses.length} dining halls</span>
               )}
             </label>
 
             {loadingMesses ? (
-              <div className="py-3 px-4 rounded-xl border border-[#2F6B4F]/10 bg-[#FFF9F0]/40 flex items-center justify-center gap-2 text-xs text-[#747A75]">
-                <Loader2 className="w-3.5 h-3.5 animate-spin text-[#2F6B4F]" />
+              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#737A74]">
+                <Loader2 className="w-3.5 h-3.5 animate-spin text-[#244D3C]" />
                 <span>Loading mess halls...</span>
               </div>
             ) : availableMesses.length === 0 ? (
-              <div className="p-3 rounded-xl border border-amber-200 bg-amber-50 text-xs text-amber-800">
+              <div className="p-3 rounded-lg border border-amber-200 bg-amber-50 text-xs text-amber-800">
                 No mess halls registered for this institution yet.
               </div>
             ) : (
@@ -231,7 +231,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
                   const m = availableMesses.find(item => item.id === e.target.value) || null;
                   setSelectedMess(m);
                 }}
-                className="w-full px-3.5 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+                className="w-full px-3.5 py-2.5 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
               >
                 {availableMesses.map((m) => (
                   <option key={m.id} value={m.id}>
@@ -245,7 +245,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
           <button
             type="submit"
             disabled={isSubmitting || loading || !selectedCollege || !selectedMess}
-            className="w-full py-3 rounded-xl bg-[#2F6B4F] hover:bg-[#23523c] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-4"
+            className="w-full py-2.5 rounded-lg bg-[#244D3C] hover:bg-[#1b3a2d] text-white font-semibold text-sm shadow-xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 mt-4"
           >
             {isSubmitting || loading ? (
               <>

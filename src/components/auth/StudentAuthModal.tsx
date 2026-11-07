@@ -216,24 +216,24 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#292D2A]/60 backdrop-blur-xs animate-in fade-in duration-200">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs animate-in fade-in duration-200">
       <div 
-        className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-[#2F6B4F]/20 overflow-hidden flex flex-col max-h-[92vh]"
+        className="relative w-full max-w-lg bg-white rounded-xl shadow-xl border border-[#E4E5DE] overflow-hidden flex flex-col max-h-[92vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Header Bar */}
-        <div className="bg-[#FFF9F0] px-6 py-5 border-b border-[#2F6B4F]/10 flex items-center justify-between">
+        <div className="bg-[#F6F4EE] px-6 py-4 border-b border-[#E4E5DE] flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#2F6B4F] text-white flex items-center justify-center shadow-xs">
-              <User className="w-5 h-5 text-[#FFF9F0]" />
+            <div className="w-9 h-9 rounded-lg bg-[#244D3C] text-white flex items-center justify-center shadow-xs">
+              <User className="w-4 h-4 text-white" />
             </div>
             <div>
-              <h2 className="font-bold text-lg text-[#292D2A]">
+              <h2 className="font-bold text-base text-[#292E2A]">
                 {mode === 'login' && 'Student Login'}
                 {mode === 'signup' && 'Student Registration'}
                 {mode === 'forgot' && 'Reset Password'}
               </h2>
-              <p className="text-xs text-[#747A75]">
+              <p className="text-xs text-[#737A74]">
                 {mode === 'login' && 'Access today’s menu & submit ratings'}
                 {mode === 'signup' && 'Search your college & connect with your mess'}
                 {mode === 'forgot' && 'Receive a secure reset link'}
@@ -242,7 +242,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
           </div>
           <button 
             onClick={onClose}
-            className="p-2 rounded-xl text-[#747A75] hover:text-[#292D2A] hover:bg-black/5 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#737A74] hover:text-[#292E2A] hover:bg-black/5 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -251,7 +251,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
         {/* QR Context Alert if scanning QR code */}
         {qrMessId && (
           <div className="bg-emerald-50 px-6 py-2.5 border-b border-emerald-100 flex items-center gap-2 text-xs text-emerald-800 font-medium">
-            <QrCode className="w-4 h-4 text-[#2F6B4F] shrink-0" />
+            <QrCode className="w-4 h-4 text-[#244D3C] shrink-0" />
             <span>Preserving scanned dining hall: <b>{selectedMess?.name || 'Assigned Mess'}</b></span>
           </div>
         )}
@@ -260,14 +260,14 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
         <div className="p-6 overflow-y-auto space-y-5">
           {/* Tabs for Login vs Signup */}
           {mode !== 'forgot' && (
-            <div className="grid grid-cols-2 p-1 bg-[#FFF9F0] rounded-2xl border border-[#2F6B4F]/15">
+            <div className="grid grid-cols-2 p-1 bg-[#F6F4EE] rounded-xl border border-[#E4E5DE]">
               <button
                 type="button"
                 onClick={() => { setMode('login'); setLocalError(null); }}
-                className={`py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'login' 
-                    ? 'bg-white text-[#2F6B4F] shadow-xs' 
-                    : 'text-[#747A75] hover:text-[#292D2A]'
+                    ? 'bg-white text-[#244D3C] shadow-xs' 
+                    : 'text-[#737A74] hover:text-[#292E2A]'
                 }`}
               >
                 Sign In
@@ -275,10 +275,10 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
               <button
                 type="button"
                 onClick={() => { setMode('signup'); setLocalError(null); }}
-                className={`py-2 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'signup' 
-                    ? 'bg-white text-[#2F6B4F] shadow-xs' 
-                    : 'text-[#747A75] hover:text-[#292D2A]'
+                    ? 'bg-white text-[#244D3C] shadow-xs' 
+                    : 'text-[#737A74] hover:text-[#292E2A]'
                 }`}
               >
                 Create Account
@@ -288,7 +288,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
 
           {/* Error Message banner */}
           {(localError || authError) && (
-            <div className="p-3.5 rounded-2xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2.5">
+            <div className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-xs text-red-700 flex items-start gap-2.5">
               <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-red-600" />
               <span>{localError || authError}</span>
             </div>
@@ -296,7 +296,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
 
           {/* Password Reset Confirmation Banner */}
           {resetSent && (
-            <div className="p-3.5 rounded-2xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-start gap-2.5">
+            <div className="p-3.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-800 flex items-start gap-2.5">
               <CheckCircle2 className="w-4 h-4 shrink-0 mt-0.5 text-emerald-600" />
               <div>
                 <p className="font-bold">Password reset email dispatched!</p>
@@ -310,8 +310,8 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
             {/* Full Name field (Signup only) */}
             {mode === 'signup' && (
               <div className="space-y-1.5">
-                <label className="text-xs font-semibold text-[#292D2A] flex items-center gap-1.5">
-                  <User className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                <label className="text-xs font-semibold text-[#292E2A] flex items-center gap-1.5">
+                  <User className="w-3.5 h-3.5 text-[#244D3C]" />
                   <span>Full Name</span>
                 </label>
                 <input
@@ -320,15 +320,15 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Sarthak Salvi"
-                  className="w-full px-4 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+                  className="w-full px-4 py-2.5 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
                 />
               </div>
             )}
 
             {/* Email field */}
             <div className="space-y-1.5">
-              <label className="text-xs font-semibold text-[#292D2A] flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-[#2F6B4F]" />
+              <label className="text-xs font-semibold text-[#292E2A] flex items-center gap-1.5">
+                <Mail className="w-3.5 h-3.5 text-[#244D3C]" />
                 <span>Student / College Email</span>
               </label>
               <input
@@ -337,7 +337,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="student@institution.edu"
-                className="w-full px-4 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+                className="w-full px-4 py-2.5 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
               />
             </div>
 
@@ -345,15 +345,15 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
             {mode !== 'forgot' && (
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-semibold text-[#292D2A] flex items-center gap-1.5">
-                    <Lock className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                  <label className="text-xs font-semibold text-[#292E2A] flex items-center gap-1.5">
+                    <Lock className="w-3.5 h-3.5 text-[#244D3C]" />
                     <span>Password</span>
                   </label>
                   {mode === 'login' && (
                     <button
                       type="button"
                       onClick={() => { setMode('forgot'); setLocalError(null); }}
-                      className="text-[11px] font-semibold text-[#E8873A] hover:underline"
+                      className="text-[11px] font-semibold text-[#B77950] hover:underline"
                     >
                       Forgot password?
                     </button>
@@ -366,12 +366,12 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••"
-                    className="w-full px-4 py-2.5 pr-10 rounded-xl border border-[#2F6B4F]/20 text-sm focus:outline-none focus:border-[#2F6B4F] bg-white transition-all"
+                    className="w-full px-4 py-2.5 pr-10 rounded-lg border border-[#E4E5DE] text-sm focus:outline-none focus:border-[#244D3C] bg-white transition-all"
                   />
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#747A75] hover:text-[#292D2A]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#737A74] hover:text-[#292E2A]"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -384,12 +384,12 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
               <div className="space-y-4 pt-1">
                 {/* Search & Select College */}
                 <div className="space-y-2">
-                  <label className="text-xs font-semibold text-[#292D2A] flex items-center justify-between">
+                  <label className="text-xs font-semibold text-[#292E2A] flex items-center justify-between">
                     <span className="flex items-center gap-1.5">
-                      <Building2 className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                      <Building2 className="w-3.5 h-3.5 text-[#244D3C]" />
                       <span>Search & Select College / University</span>
                     </span>
-                    {loadingInstitutions && <span className="text-[10px] text-[#747A75]">Loading list...</span>}
+                    {loadingInstitutions && <span className="text-[10px] text-[#737A74]">Loading list...</span>}
                   </label>
 
                   {/* College Search input */}
@@ -400,12 +400,12 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                       value={collegeSearchQuery}
                       onChange={(e) => setCollegeSearchQuery(e.target.value)}
                       placeholder="Type to filter registered colleges..."
-                      className="w-full pl-9 pr-4 py-2 rounded-xl border border-[#2F6B4F]/20 text-xs focus:outline-none focus:border-[#2F6B4F] bg-white"
+                      className="w-full pl-9 pr-4 py-2 rounded-lg border border-[#E4E5DE] text-xs focus:outline-none focus:border-[#244D3C] bg-white"
                     />
                   </div>
 
                   {/* College Selection Cards */}
-                  <div className="max-h-36 overflow-y-auto space-y-1.5 border border-[#2F6B4F]/10 p-2 rounded-xl bg-[#FFF9F0]">
+                  <div className="max-h-36 overflow-y-auto space-y-1.5 border border-[#E4E5DE] p-2 rounded-lg bg-[#F6F4EE]">
                     {filteredColleges.length > 0 ? (
                       filteredColleges.map((inst) => (
                         <div
@@ -413,19 +413,19 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                           onClick={() => setSelectedCollege(inst)}
                           className={`p-2.5 rounded-lg border text-xs flex items-center justify-between cursor-pointer transition-all ${
                             selectedCollege?.id === inst.id
-                              ? 'border-[#2F6B4F] bg-white font-bold text-[#2F6B4F] shadow-2xs'
-                              : 'border-transparent hover:bg-white text-[#292D2A]'
+                              ? 'border-[#244D3C] bg-white font-semibold text-[#244D3C] shadow-2xs'
+                              : 'border-transparent hover:bg-white text-[#292E2A]'
                           }`}
                         >
                           <div>
                             <div>{inst.name}</div>
-                            {inst.location && <div className="text-[10px] text-[#747A75] font-normal">{inst.location}</div>}
+                            {inst.location && <div className="text-[10px] text-[#737A74] font-normal">{inst.location}</div>}
                           </div>
-                          {selectedCollege?.id === inst.id && <Check className="w-4 h-4 text-[#2F6B4F] shrink-0" />}
+                          {selectedCollege?.id === inst.id && <Check className="w-4 h-4 text-[#244D3C] shrink-0" />}
                         </div>
                       ))
                     ) : (
-                      <div className="text-center py-3 text-xs text-[#747A75]">
+                      <div className="text-center py-3 text-xs text-[#737A74]">
                         No college matching "{collegeSearchQuery}". Admins can register new colleges anytime via the Admin Portal!
                       </div>
                     )}
@@ -435,12 +435,12 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 {/* Mess Selection for the chosen college */}
                 {selectedCollege && (
                   <div className="space-y-1.5">
-                    <label className="text-xs font-semibold text-[#292D2A] flex items-center justify-between">
+                    <label className="text-xs font-semibold text-[#292E2A] flex items-center justify-between">
                       <span className="flex items-center gap-1.5">
-                        <MapPin className="w-3.5 h-3.5 text-[#2F6B4F]" />
+                        <MapPin className="w-3.5 h-3.5 text-[#244D3C]" />
                         <span>Dining Mess at {selectedCollege.name}</span>
                       </span>
-                      {loadingMesses && <span className="text-[10px] text-[#747A75]">Loading messes...</span>}
+                      {loadingMesses && <span className="text-[10px] text-[#737A74]">Loading messes...</span>}
                     </label>
 
                     {availableMesses.length > 0 ? (
@@ -450,7 +450,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                           const found = availableMesses.find(m => m.id === e.target.value);
                           if (found) setSelectedMess(found);
                         }}
-                        className="w-full px-3.5 py-2.5 rounded-xl border border-[#2F6B4F]/20 text-xs font-semibold focus:outline-none focus:border-[#2F6B4F] bg-white"
+                        className="w-full px-3.5 py-2.5 rounded-lg border border-[#E4E5DE] text-xs font-semibold focus:outline-none focus:border-[#244D3C] bg-white"
                       >
                         {availableMesses.map((m) => (
                           <option key={m.id} value={m.id}>
@@ -459,7 +459,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                         ))}
                       </select>
                     ) : (
-                      <div className="p-3 bg-white rounded-xl border border-dashed border-[#2F6B4F]/20 text-xs text-[#747A75] text-center">
+                      <div className="p-3 bg-white rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#737A74] text-center">
                         No active dining halls registered under this college yet.
                       </div>
                     )}
@@ -472,7 +472,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
             <button
               type="submit"
               disabled={isSubmitting || loading}
-              className="w-full py-3 rounded-xl bg-[#2F6B4F] hover:bg-[#23523c] text-white font-bold text-sm shadow-md transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer mt-2"
+              className="w-full py-2.5 rounded-lg bg-[#244D3C] hover:bg-[#1b3a2d] text-white font-semibold text-sm shadow-xs transition-all flex items-center justify-center gap-2 disabled:opacity-50 cursor-pointer mt-2"
             >
               {isSubmitting || loading ? (
                 <>
@@ -498,7 +498,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
               <button
                 type="button"
                 onClick={() => { setMode('login'); setResetSent(false); setLocalError(null); }}
-                className="text-xs font-semibold text-[#2F6B4F] hover:underline cursor-pointer"
+                className="text-xs font-semibold text-[#244D3C] hover:underline cursor-pointer"
               >
                 Back to Student Sign In
               </button>
@@ -509,8 +509,8 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
           {mode !== 'forgot' && (
             <div className="space-y-4 pt-2">
               <div className="relative flex items-center justify-center">
-                <div className="border-t border-[#2F6B4F]/15 w-full"></div>
-                <span className="bg-white px-3 text-[11px] uppercase font-bold text-[#747A75]">
+                <div className="border-t border-[#E4E5DE] w-full"></div>
+                <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#737A74]">
                   Or continue with
                 </span>
               </div>
@@ -519,7 +519,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 type="button"
                 onClick={handleGoogleSignIn}
                 disabled={isSubmitting || loading}
-                className="w-full py-2.5 px-4 rounded-xl border border-[#2F6B4F]/20 hover:border-[#2F6B4F]/50 bg-white hover:bg-[#FFF9F0] text-sm font-semibold text-[#292D2A] shadow-2xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                className="w-full py-2.5 px-4 rounded-lg border border-[#E4E5DE] hover:border-[#244D3C]/50 bg-white hover:bg-[#F6F4EE] text-sm font-semibold text-[#292E2A] shadow-2xs transition-all flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
               >
                 <svg className="w-4 h-4" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
@@ -534,7 +534,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
         </div>
 
         {/* Modal Footer Note */}
-        <div className="bg-[#FFF9F0] px-6 py-3 border-t border-[#2F6B4F]/10 text-center text-[11px] text-[#747A75]">
+        <div className="bg-[#F6F4EE] px-6 py-3 border-t border-[#E4E5DE] text-center text-[11px] text-[#737A74]">
           Mess schedules and student dish ratings update live via Cloud Firestore.
         </div>
       </div>
