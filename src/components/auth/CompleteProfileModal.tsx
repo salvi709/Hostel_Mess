@@ -124,7 +124,7 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
             <span>Almost Done!</span>
           </div>
           <h2 className="font-bold text-base text-[#292E2A]">Complete Your Student Profile</h2>
-          <p className="text-xs text-[#737A74] mt-1">
+          <p className="text-xs text-[#777D76] mt-1">
             Choose your campus institution and hostel dining hall to personalize your daily meal schedules and polls.
           </p>
         </div>
@@ -159,13 +159,13 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
                 <span>Campus / University</span>
               </span>
               {institutions.length > 5 && (
-                <span className="text-[10px] text-[#737A74]">{institutions.length} institutions</span>
+                <span className="text-[10px] text-[#777D76]">{institutions.length} institutions</span>
               )}
             </label>
 
             {institutions.length > 4 && (
               <div className="relative mb-1.5">
-                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#737A74]" />
+                <Search className="w-3.5 h-3.5 absolute left-3 top-1/2 -translate-y-1/2 text-[#777D76]" />
                 <input
                   type="text"
                   value={collegeSearchQuery}
@@ -177,12 +177,12 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
             )}
 
             {loadingInstitutions ? (
-              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#737A74]">
+              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#777D76]">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-[#244D3C]" />
                 <span>Loading campuses...</span>
               </div>
             ) : filteredColleges.length === 0 ? (
-              <div className="p-3 rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#737A74] text-center bg-[#F6F4EE]/40">
+              <div className="p-3 rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#777D76] text-center bg-[#F6F4EE]/40">
                 No institutions found matching "{collegeSearchQuery}".
               </div>
             ) : (
@@ -211,12 +211,12 @@ export const CompleteProfileModal: React.FC<CompleteProfileModalProps> = ({
                 <span>Hostel Mess / Dining Hall</span>
               </span>
               {availableMesses.length > 0 && (
-                <span className="text-[10px] text-[#737A74]">{availableMesses.length} dining halls</span>
+                <span className="text-[10px] text-[#777D76]">{availableMesses.length} dining halls</span>
               )}
             </label>
 
             {loadingMesses ? (
-              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#737A74]">
+              <div className="py-3 px-4 rounded-lg border border-[#E4E5DE] bg-[#F6F4EE]/60 flex items-center justify-center gap-2 text-xs text-[#777D76]">
                 <Loader2 className="w-3.5 h-3.5 animate-spin text-[#244D3C]" />
                 <span>Loading mess halls...</span>
               </div>

@@ -233,7 +233,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 {mode === 'signup' && 'Student Registration'}
                 {mode === 'forgot' && 'Reset Password'}
               </h2>
-              <p className="text-xs text-[#737A74]">
+              <p className="text-xs text-[#777D76]">
                 {mode === 'login' && 'Access today’s menu & submit ratings'}
                 {mode === 'signup' && 'Search your college & connect with your mess'}
                 {mode === 'forgot' && 'Receive a secure reset link'}
@@ -242,7 +242,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#737A74] hover:text-[#292E2A] hover:bg-black/5 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#777D76] hover:text-[#292E2A] hover:bg-black/5 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -267,7 +267,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'login' 
                     ? 'bg-white text-[#244D3C] shadow-xs' 
-                    : 'text-[#737A74] hover:text-[#292E2A]'
+                    : 'text-[#777D76] hover:text-[#292E2A]'
                 }`}
               >
                 Sign In
@@ -278,7 +278,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                 className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                   mode === 'signup' 
                     ? 'bg-white text-[#244D3C] shadow-xs' 
-                    : 'text-[#737A74] hover:text-[#292E2A]'
+                    : 'text-[#777D76] hover:text-[#292E2A]'
                 }`}
               >
                 Create Account
@@ -371,7 +371,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#737A74] hover:text-[#292E2A]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#777D76] hover:text-[#292E2A]"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -389,7 +389,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                       <Building2 className="w-3.5 h-3.5 text-[#244D3C]" />
                       <span>Search & Select College / University</span>
                     </span>
-                    {loadingInstitutions && <span className="text-[10px] text-[#737A74]">Loading list...</span>}
+                    {loadingInstitutions && <span className="text-[10px] text-[#777D76]">Loading list...</span>}
                   </label>
 
                   {/* College Search input */}
@@ -419,13 +419,13 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                         >
                           <div>
                             <div>{inst.name}</div>
-                            {inst.location && <div className="text-[10px] text-[#737A74] font-normal">{inst.location}</div>}
+                            {inst.location && <div className="text-[10px] text-[#777D76] font-normal">{inst.location}</div>}
                           </div>
                           {selectedCollege?.id === inst.id && <Check className="w-4 h-4 text-[#244D3C] shrink-0" />}
                         </div>
                       ))
                     ) : (
-                      <div className="text-center py-3 text-xs text-[#737A74]">
+                      <div className="text-center py-3 text-xs text-[#777D76]">
                         No college matching "{collegeSearchQuery}". Admins can register new colleges anytime via the Admin Portal!
                       </div>
                     )}
@@ -440,7 +440,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                         <MapPin className="w-3.5 h-3.5 text-[#244D3C]" />
                         <span>Dining Mess at {selectedCollege.name}</span>
                       </span>
-                      {loadingMesses && <span className="text-[10px] text-[#737A74]">Loading messes...</span>}
+                      {loadingMesses && <span className="text-[10px] text-[#777D76]">Loading messes...</span>}
                     </label>
 
                     {availableMesses.length > 0 ? (
@@ -459,7 +459,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
                         ))}
                       </select>
                     ) : (
-                      <div className="p-3 bg-white rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#737A74] text-center">
+                      <div className="p-3 bg-white rounded-lg border border-dashed border-[#E4E5DE] text-xs text-[#777D76] text-center">
                         No active dining halls registered under this college yet.
                       </div>
                     )}
@@ -510,7 +510,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
             <div className="space-y-4 pt-2">
               <div className="relative flex items-center justify-center">
                 <div className="border-t border-[#E4E5DE] w-full"></div>
-                <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#737A74]">
+                <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#777D76]">
                   Or continue with
                 </span>
               </div>
@@ -534,7 +534,7 @@ export const StudentAuthModal: React.FC<StudentAuthModalProps> = ({
         </div>
 
         {/* Modal Footer Note */}
-        <div className="bg-[#F6F4EE] px-6 py-3 border-t border-[#E4E5DE] text-center text-[11px] text-[#737A74]">
+        <div className="bg-[#F6F4EE] px-6 py-3 border-t border-[#E4E5DE] text-center text-[11px] text-[#777D76]">
           Mess schedules and student dish ratings update live via Cloud Firestore.
         </div>
       </div>

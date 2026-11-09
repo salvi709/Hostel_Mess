@@ -561,7 +561,7 @@ export const AdminDashboard: React.FC = () => {
             )}
             <button
               onClick={() => setIsSidebarCollapsed(!isSidebarCollapsed)}
-              className="p-1.5 rounded-md text-[#737A74] hover:text-[#292E2A] hover:bg-[#F6F4EE] transition-colors hidden md:block cursor-pointer ml-auto"
+              className="p-1.5 rounded-md text-[#777D76] hover:text-[#292E2A] hover:bg-[#F6F4EE] transition-colors hidden md:block cursor-pointer ml-auto"
               title={isSidebarCollapsed ? "Expand sidebar" : "Collapse sidebar"}
             >
               {isSidebarCollapsed ? <ChevronRight className="w-4 h-4" /> : <ChevronLeft className="w-4 h-4" />}
@@ -591,11 +591,11 @@ export const AdminDashboard: React.FC = () => {
                   className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer group ${
                     isActive 
                       ? 'bg-[#244D3C] text-white shadow-2xs' 
-                      : 'text-[#737A74] hover:text-[#292E2A] hover:bg-[#F6F4EE]'
+                      : 'text-[#777D76] hover:text-[#292E2A] hover:bg-[#F6F4EE]'
                   }`}
                   title={item.label}
                 >
-                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#737A74] group-hover:text-[#244D3C]'}`} />
+                  <Icon className={`w-4 h-4 shrink-0 ${isActive ? 'text-white' : 'text-[#777D76] group-hover:text-[#244D3C]'}`} />
                   {!isSidebarCollapsed && (
                     <span className="truncate flex-1 text-left">{item.label}</span>
                   )}
@@ -605,7 +605,7 @@ export const AdminDashboard: React.FC = () => {
                     </span>
                   )}
                   {!isSidebarCollapsed && item.tag && (
-                    <span className={`text-[10px] font-mono ${isActive ? 'text-white/80' : 'text-[#737A74]'}`}>
+                    <span className={`text-[10px] font-mono ${isActive ? 'text-white/80' : 'text-[#777D76]'}`}>
                       {item.tag}
                     </span>
                   )}
@@ -619,7 +619,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="p-4 border-t border-[#E4E5DE] bg-[#F6F4EE]/50 space-y-3">
           {!isSidebarCollapsed && (
             <div className="space-y-1.5">
-              <span className="text-[10px] font-semibold text-[#737A74] uppercase tracking-wider block">
+              <span className="text-[10px] font-semibold text-[#777D76] uppercase tracking-wider block">
                 Active Dining Hall
               </span>
               <select
@@ -668,7 +668,7 @@ export const AdminDashboard: React.FC = () => {
         {/* Workspace Context Header with Breadcrumbs & Multi-Mess Action */}
         <div className="bg-white rounded-xl p-5 sm:p-6 shadow-xs border border-[#E4E5DE] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
           <div className="space-y-1">
-            <div className="flex items-center gap-2 text-xs text-[#737A74]">
+            <div className="flex items-center gap-2 text-xs text-[#777D76]">
               <span>Campus</span>
               <span>/</span>
               <span>{userProfile?.collegeName || 'Institution'}</span>
@@ -743,39 +743,39 @@ export const AdminDashboard: React.FC = () => {
           {/* Key Metric Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1.5">
-              <div className="flex items-center justify-between text-xs text-[#737A74]">
+              <div className="flex items-center justify-between text-xs text-[#777D76]">
                 <span className="font-medium">Overall Satisfaction</span>
                 <Star className="w-4 h-4 fill-[#B77950] text-[#B77950]" />
               </div>
-              <div className="text-2xl font-bold text-[#244D3C]">{avgRating} <span className="text-xs font-normal text-[#737A74]">/ 5.0</span></div>
-              <p className="text-[11px] text-[#737A74]">Across {totalRatings} student reviews</p>
+              <div className="text-2xl font-bold text-[#244D3C]">{avgRating} <span className="text-xs font-normal text-[#777D76]">/ 5.0</span></div>
+              <p className="text-[11px] text-[#777D76]">Across {totalRatings} student reviews</p>
             </div>
 
             <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1.5">
-              <div className="flex items-center justify-between text-xs text-[#737A74]">
+              <div className="flex items-center justify-between text-xs text-[#777D76]">
                 <span className="font-medium">Taste & Flavor Rating</span>
                 <ChefHat className="w-4 h-4 text-[#244D3C]" />
               </div>
               <div className="text-2xl font-bold text-[#244D3C]">{avgTaste} ★</div>
-              <p className="text-[11px] text-[#737A74]">Quality of spices & cooking</p>
+              <p className="text-[11px] text-[#777D76]">Quality of spices & cooking</p>
             </div>
 
             <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1.5">
-              <div className="flex items-center justify-between text-xs text-[#737A74]">
+              <div className="flex items-center justify-between text-xs text-[#777D76]">
                 <span className="font-medium">Mess Hygiene Score</span>
                 <CheckCircle2 className="w-4 h-4 text-[#244D3C]" />
               </div>
               <div className="text-2xl font-bold text-[#244D3C]">{avgHygiene} ★</div>
-              <p className="text-[11px] text-[#737A74]">Clean utensils & dining area</p>
+              <p className="text-[11px] text-[#777D76]">Clean utensils & dining area</p>
             </div>
 
             <div className="bg-white p-5 rounded-xl border border-[#E4E5DE] shadow-xs space-y-1.5">
-              <div className="flex items-center justify-between text-xs text-[#737A74]">
+              <div className="flex items-center justify-between text-xs text-[#777D76]">
                 <span className="font-medium">Pending Grievances</span>
                 <AlertTriangle className="w-4 h-4 text-[#B77950]" />
               </div>
               <div className="text-2xl font-bold text-[#B77950]">{pendingFeedbackCount}</div>
-              <p className="text-[11px] text-[#737A74]">{feedbackList.length} total received</p>
+              <p className="text-[11px] text-[#777D76]">{feedbackList.length} total received</p>
             </div>
           </div>
 
@@ -799,7 +799,7 @@ export const AdminDashboard: React.FC = () => {
                           {f.status}
                         </span>
                       </div>
-                      <p className="text-xs text-[#737A74]">{f.body}</p>
+                      <p className="text-xs text-[#777D76]">{f.body}</p>
                       <button
                         onClick={() => {
                           setResolvingItem(f);
@@ -814,7 +814,7 @@ export const AdminDashboard: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-xs text-[#737A74] italic py-4">No unresolved complaints! All grievances have been addressed.</p>
+                <p className="text-xs text-[#777D76] italic py-4">No unresolved complaints! All grievances have been addressed.</p>
               )}
             </div>
 
@@ -836,7 +836,7 @@ export const AdminDashboard: React.FC = () => {
                           <span className="font-bold text-[#292E2A]">{poll.question}</span>
                           <span className="font-bold text-[#244D3C]">{votesForPoll.length} votes</span>
                         </div>
-                        <div className="text-xs text-[#737A74]">
+                        <div className="text-xs text-[#777D76]">
                           Status: <span className="capitalize font-semibold text-[#292E2A]">{poll.status}</span>
                         </div>
                       </div>
@@ -844,7 +844,7 @@ export const AdminDashboard: React.FC = () => {
                   })}
                 </div>
               ) : (
-                <p className="text-xs text-[#737A74] italic py-4">No active polls. Create one in the Polls tab.</p>
+                <p className="text-xs text-[#777D76] italic py-4">No active polls. Create one in the Polls tab.</p>
               )}
             </div>
           </div>
@@ -857,7 +857,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E4E5DE]">
             <div>
               <h2 className="text-lg font-bold text-[#292E2A]">Weekly Mess Schedule & Menu Planner</h2>
-              <p className="text-xs text-[#737A74]">Changes publish instantly to all student dashboards via Firestore.</p>
+              <p className="text-xs text-[#777D76]">Changes publish instantly to all student dashboards via Firestore.</p>
             </div>
             <button
               onClick={() => {
@@ -891,7 +891,7 @@ export const AdminDashboard: React.FC = () => {
                               <span className="px-2 py-0.5 rounded-full bg-[#244D3C] text-white text-[10px] font-bold uppercase">
                                 {m.mealType}
                               </span>
-                              <span className="text-[11px] text-[#737A74] font-medium">
+                              <span className="text-[11px] text-[#777D76] font-medium">
                                 {m.startTime} - {m.endTime}
                               </span>
                             </div>
@@ -925,7 +925,7 @@ export const AdminDashboard: React.FC = () => {
                       ))}
                     </div>
                   ) : (
-                    <p className="text-xs text-[#737A74] italic">No meals scheduled for {dayName}.</p>
+                    <p className="text-xs text-[#777D76] italic">No meals scheduled for {dayName}.</p>
                   )}
                 </div>
               );
@@ -940,7 +940,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="pb-4 border-b border-[#E4E5DE] flex items-center justify-between">
             <div>
               <h2 className="text-lg font-bold text-[#292E2A]">Student Grievance & Feedback Inbox</h2>
-              <p className="text-xs text-[#737A74]">Review and reply to complaints. Your responses appear live in the student's dashboard.</p>
+              <p className="text-xs text-[#777D76]">Review and reply to complaints. Your responses appear live in the student's dashboard.</p>
             </div>
           </div>
 
@@ -955,10 +955,10 @@ export const AdminDashboard: React.FC = () => {
                       {item.kind}
                     </span>
                     <span className="font-bold text-[#292E2A]">{item.category}</span>
-                    <span className="text-[#737A74]">by {item.userName}</span>
+                    <span className="text-[#777D76]">by {item.userName}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <span className="text-[11px] text-[#737A74]">
+                    <span className="text-[11px] text-[#777D76]">
                       {new Date(item.createdAt).toLocaleDateString()}
                     </span>
                     <span className={`px-2.5 py-0.5 rounded-full text-xs font-bold ${
@@ -1004,7 +1004,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E4E5DE]">
             <div>
               <h2 className="text-lg font-bold text-[#292E2A]">Mess Food Polls</h2>
-              <p className="text-xs text-[#737A74]">Democratically decide special meals and Sunday feast options.</p>
+              <p className="text-xs text-[#777D76]">Democratically decide special meals and Sunday feast options.</p>
             </div>
             <button
               onClick={() => setPollModalOpen(true)}
@@ -1034,7 +1034,7 @@ export const AdminDashboard: React.FC = () => {
                       }`}>
                         {poll.status}
                       </span>
-                      <span className="text-[#737A74] font-semibold">{totalVotes} total votes</span>
+                      <span className="text-[#777D76] font-semibold">{totalVotes} total votes</span>
                     </div>
 
                     <h3 className="font-bold text-sm text-[#292E2A]">{poll.question}</h3>
@@ -1082,7 +1082,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E4E5DE]">
             <div>
               <h2 className="text-lg font-bold text-[#292E2A]">Mess Notice Board Publisher</h2>
-              <p className="text-xs text-[#737A74]">Broadcast food alerts, timing changes, and festival feast announcements.</p>
+              <p className="text-xs text-[#777D76]">Broadcast food alerts, timing changes, and festival feast announcements.</p>
             </div>
             <button
               onClick={() => setAnnModalOpen(true)}
@@ -1105,7 +1105,7 @@ export const AdminDashboard: React.FC = () => {
                       </span>
                     )}
                   </div>
-                  <p className="text-xs text-[#737A74] leading-relaxed">{ann.body}</p>
+                  <p className="text-xs text-[#777D76] leading-relaxed">{ann.body}</p>
                   <div className="text-[10px] text-[#244D3C] font-semibold pt-1">
                     Published by {ann.authorName} on {new Date(ann.createdAt).toLocaleDateString()}
                   </div>
@@ -1129,7 +1129,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="bg-white rounded-xl p-6 sm:p-8 shadow-xs border border-[#E4E5DE] space-y-6">
           <div className="pb-4 border-b border-[#E4E5DE]">
             <h2 className="text-lg font-bold text-[#292E2A]">Mess Administrator Access Requests</h2>
-            <p className="text-xs text-[#737A74]">
+            <p className="text-xs text-[#777D76]">
               Verify applicants requesting management privileges. Approving adds them securely to the database.
             </p>
           </div>
@@ -1151,10 +1151,10 @@ export const AdminDashboard: React.FC = () => {
                         {req.status}
                       </span>
                     </div>
-                    <p className="text-xs text-[#737A74]">
+                    <p className="text-xs text-[#777D76]">
                       Email: <b>{req.email}</b> • Campus: <b>{req.collegeName}</b> • Hall: <b>{req.messName}</b>
                     </p>
-                    <p className="text-[10px] text-[#737A74]">
+                    <p className="text-[10px] text-[#777D76]">
                       Submitted: {new Date(req.createdAt).toLocaleDateString()}
                     </p>
                   </div>
@@ -1180,7 +1180,7 @@ export const AdminDashboard: React.FC = () => {
               ))}
             </div>
           ) : (
-            <p className="text-xs text-[#737A74] italic">No pending admin authorization requests.</p>
+            <p className="text-xs text-[#777D76] italic">No pending admin authorization requests.</p>
           )}
         </div>
       )}
@@ -1190,7 +1190,7 @@ export const AdminDashboard: React.FC = () => {
         <div className="bg-white rounded-xl p-6 sm:p-8 shadow-xs border border-[#E4E5DE] space-y-6">
           <div className="pb-4 border-b border-[#E4E5DE]">
             <h2 className="text-lg font-bold text-[#292E2A]">Mess Entrance QR Code Poster</h2>
-            <p className="text-xs text-[#737A74]">
+            <p className="text-xs text-[#777D76]">
               Print and display this QR code at the dining hall entrance for students to check the menu and submit ratings.
             </p>
           </div>
@@ -1206,7 +1206,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="space-y-4 max-w-md">
               <div>
                 <h3 className="font-bold text-lg text-[#292E2A]">{userProfile?.messName}</h3>
-                <p className="text-xs text-[#737A74] mt-1">
+                <p className="text-xs text-[#777D76] mt-1">
                   Unique Link: <span className="text-[#244D3C] font-mono break-all">{`${window.location.origin}/?mess=${activeMessId}`}</span>
                 </p>
               </div>
@@ -1260,7 +1260,7 @@ export const AdminDashboard: React.FC = () => {
                   <h2 className="text-xl font-bold text-[#292E2A] mt-2">
                     {currentPlan === 'pro' ? 'Pro Plan — Multi-Mess Platform' : 'Starter Plan — Single Dining Hall'}
                   </h2>
-                  <p className="text-xs text-[#737A74] mt-1">
+                  <p className="text-xs text-[#777D76] mt-1">
                     Workspace for <b>{userProfile?.collegeName || 'Your Institution'}</b>
                   </p>
                 </div>
@@ -1268,9 +1268,9 @@ export const AdminDashboard: React.FC = () => {
                 <div className="text-right">
                   <div className="text-2xl font-bold text-[#244D3C]">
                     ₹{currentPlan === 'pro' ? '2,999' : '1,500'}
-                    <span className="text-xs font-normal text-[#737A74]"> / month</span>
+                    <span className="text-xs font-normal text-[#777D76]"> / month</span>
                   </div>
-                  <div className="text-[10px] text-[#737A74] mt-0.5">
+                  <div className="text-[10px] text-[#777D76] mt-0.5">
                     {subscription?.isDemo ? 'Demo trial activation • No credit card charged' : 'Billed monthly'}
                   </div>
                 </div>
@@ -1297,7 +1297,7 @@ export const AdminDashboard: React.FC = () => {
                   />
                 </div>
 
-                <div className="flex items-center justify-between text-[11px] text-[#737A74]">
+                <div className="flex items-center justify-between text-[11px] text-[#777D76]">
                   <span>
                     {messes.length >= maxMessesAllowed 
                       ? currentPlan === 'starter'
@@ -1346,7 +1346,7 @@ export const AdminDashboard: React.FC = () => {
                     <h3 className="font-bold text-sm text-[#292E2A]">
                       {currentPlan === 'pro' ? 'Pro Plan Features' : 'Unlock Pro Plan'}
                     </h3>
-                    <p className="text-[11px] text-[#737A74]">Designed for multi-hostel campuses</p>
+                    <p className="text-[11px] text-[#777D76]">Designed for multi-hostel campuses</p>
                   </div>
                 </div>
 
@@ -1395,7 +1395,7 @@ export const AdminDashboard: React.FC = () => {
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-[#E4E5DE]">
               <div>
                 <h3 className="text-base font-bold text-[#292E2A]">Campus Dining Halls ({messes.length})</h3>
-                <p className="text-xs text-[#737A74]">
+                <p className="text-xs text-[#777D76]">
                   All messes configured under <b>{userProfile?.collegeName}</b>. Students can select any of these during onboarding.
                 </p>
               </div>
@@ -1432,7 +1432,7 @@ export const AdminDashboard: React.FC = () => {
                           </span>
                         )}
                       </div>
-                      <p className="text-xs text-[#737A74]">{m.locationBlock || 'Main Dining Block'}</p>
+                      <p className="text-xs text-[#777D76]">{m.locationBlock || 'Main Dining Block'}</p>
                       {m.description && <p className="text-xs text-[#292E2A] pt-1">{m.description}</p>}
                     </div>
 
@@ -1453,7 +1453,7 @@ export const AdminDashboard: React.FC = () => {
                     )}
                   </div>
 
-                  <div className="mt-4 pt-3 border-t border-[#E4E5DE] grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-[#737A74]">
+                  <div className="mt-4 pt-3 border-t border-[#E4E5DE] grid grid-cols-2 sm:grid-cols-4 gap-2 text-[11px] text-[#777D76]">
                     <div>
                       <span className="font-semibold block text-[#292E2A]">Breakfast</span>
                       <span>{m.breakfastTime || '07:30 - 09:30'}</span>
@@ -1486,7 +1486,7 @@ export const AdminDashboard: React.FC = () => {
               <h3 className="font-bold text-base text-[#292E2A]">
                 {editingMenu ? 'Edit Meal Schedule' : 'Add Meal to Schedule'}
               </h3>
-              <button onClick={() => setMenuModalOpen(false)} className="p-1 rounded-lg text-[#737A74] hover:bg-black/5">
+              <button onClick={() => setMenuModalOpen(false)} className="p-1 rounded-lg text-[#777D76] hover:bg-black/5">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -1569,7 +1569,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setMenuModalOpen(false)}
-                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5"
                 >
                   Cancel
                 </button>
@@ -1591,7 +1591,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-xl border border-[#E4E5DE] space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
               <h3 className="font-bold text-base text-[#292E2A]">Create Food Poll</h3>
-              <button onClick={() => setPollModalOpen(false)} className="p-1 rounded-lg text-[#737A74] hover:bg-black/5">
+              <button onClick={() => setPollModalOpen(false)} className="p-1 rounded-lg text-[#777D76] hover:bg-black/5">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -1636,7 +1636,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setPollModalOpen(false)}
-                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5"
                 >
                   Cancel
                 </button>
@@ -1658,7 +1658,7 @@ export const AdminDashboard: React.FC = () => {
           <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-xl border border-[#E4E5DE] space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
               <h3 className="font-bold text-base text-[#292E2A]">Publish Notice</h3>
-              <button onClick={() => setAnnModalOpen(false)} className="p-1 rounded-lg text-[#737A74] hover:bg-black/5">
+              <button onClick={() => setAnnModalOpen(false)} className="p-1 rounded-lg text-[#777D76] hover:bg-black/5">
                 <X className="w-5 h-5" />
               </button>
             </div>
@@ -1704,7 +1704,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setAnnModalOpen(false)}
-                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5"
                 >
                   Cancel
                 </button>
@@ -1726,14 +1726,14 @@ export const AdminDashboard: React.FC = () => {
           <div className="w-full max-w-md bg-white rounded-xl p-6 shadow-xl border border-[#E4E5DE] space-y-4">
             <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
               <h3 className="font-bold text-base text-[#292E2A]">Respond to Grievance</h3>
-              <button onClick={() => setResolvingItem(null)} className="p-1 rounded-lg text-[#737A74] hover:bg-black/5">
+              <button onClick={() => setResolvingItem(null)} className="p-1 rounded-lg text-[#777D76] hover:bg-black/5">
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             <div className="p-3.5 bg-[#F6F4EE] rounded-lg border border-[#E4E5DE] text-xs space-y-1">
               <div className="font-bold text-[#292E2A]">{resolvingItem.category} ({resolvingItem.userName})</div>
-              <p className="text-[#737A74]">{resolvingItem.body}</p>
+              <p className="text-[#777D76]">{resolvingItem.body}</p>
             </div>
 
             <form onSubmit={handleResolveFeedback} className="space-y-4">
@@ -1766,7 +1766,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setResolvingItem(null)}
-                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5"
                 >
                   Cancel
                 </button>
@@ -1789,13 +1789,13 @@ export const AdminDashboard: React.FC = () => {
             <div className="flex items-center justify-between pb-3 border-b border-[#E4E5DE]">
               <div>
                 <h3 className="font-bold text-base text-[#292E2A]">Register New Mess Hall</h3>
-                <p className="text-xs text-[#737A74]">
+                <p className="text-xs text-[#777D76]">
                   Add a dining hall under <b>{userProfile?.collegeName || 'Campus'}</b>
                 </p>
               </div>
               <button 
                 onClick={() => setAddMessModalOpen(false)} 
-                className="p-1.5 rounded-lg text-[#737A74] hover:bg-black/5 cursor-pointer"
+                className="p-1.5 rounded-lg text-[#777D76] hover:bg-black/5 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -1835,7 +1835,7 @@ export const AdminDashboard: React.FC = () => {
                 <button
                   type="button"
                   onClick={() => setAddMessModalOpen(false)}
-                  className="w-full py-2 rounded-lg border border-[#E4E5DE] text-xs font-semibold text-[#737A74] hover:bg-[#F6F4EE] cursor-pointer"
+                  className="w-full py-2 rounded-lg border border-[#E4E5DE] text-xs font-semibold text-[#777D76] hover:bg-[#F6F4EE] cursor-pointer"
                 >
                   Close
                 </button>
@@ -1887,7 +1887,7 @@ export const AdminDashboard: React.FC = () => {
                   <h4 className="text-xs font-bold text-[#292E2A]">Standard Meal Timings</h4>
                   <div className="grid grid-cols-2 gap-3">
                     <div className="space-y-1">
-                      <label className="text-[11px] text-[#737A74]">Breakfast Time</label>
+                      <label className="text-[11px] text-[#777D76]">Breakfast Time</label>
                       <input
                         type="text"
                         value={newMessBreakfast}
@@ -1897,7 +1897,7 @@ export const AdminDashboard: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[11px] text-[#737A74]">Lunch Time</label>
+                      <label className="text-[11px] text-[#777D76]">Lunch Time</label>
                       <input
                         type="text"
                         value={newMessLunch}
@@ -1907,7 +1907,7 @@ export const AdminDashboard: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[11px] text-[#737A74]">Evening Snacks</label>
+                      <label className="text-[11px] text-[#777D76]">Evening Snacks</label>
                       <input
                         type="text"
                         value={newMessSnacks}
@@ -1917,7 +1917,7 @@ export const AdminDashboard: React.FC = () => {
                       />
                     </div>
                     <div className="space-y-1">
-                      <label className="text-[11px] text-[#737A74]">Dinner Time</label>
+                      <label className="text-[11px] text-[#777D76]">Dinner Time</label>
                       <input
                         type="text"
                         value={newMessDinner}
@@ -1933,7 +1933,7 @@ export const AdminDashboard: React.FC = () => {
                   <button
                     type="button"
                     onClick={() => setAddMessModalOpen(false)}
-                    className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5"
+                    className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5"
                   >
                     Cancel
                   </button>

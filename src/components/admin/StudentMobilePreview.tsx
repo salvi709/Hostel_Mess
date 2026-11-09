@@ -101,7 +101,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
             <Smartphone className="w-5 h-5 text-[#244D3C]" />
             <h2 className="text-base font-bold text-[#292E2A]">Student Mobile Viewport Preview</h2>
           </div>
-          <p className="text-xs text-[#737A74] mt-1">
+          <p className="text-xs text-[#777D76] mt-1">
             Simulates how hostel residents experience daily menus, dish rating forms, and polls on mobile devices.
           </p>
         </div>
@@ -142,7 +142,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
               {/* Top Bar inside app */}
               <div className="flex items-center justify-between">
                 <div>
-                  <div className="text-[10px] font-medium text-[#737A74] uppercase tracking-wider">
+                  <div className="text-[10px] font-medium text-[#777D76] uppercase tracking-wider">
                     {collegeName}
                   </div>
                   <h3 className="text-sm font-bold text-[#292E2A] truncate max-w-[200px]">
@@ -160,7 +160,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                   <Calendar className="w-3.5 h-3.5 text-[#244D3C]" />
                   <span>{dayName} Menu</span>
                 </div>
-                <span className="text-[10px] text-[#737A74]">
+                <span className="text-[10px] text-[#777D76]">
                   {new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' })}
                 </span>
               </div>
@@ -174,7 +174,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                     className={`py-1 text-[10px] font-semibold rounded-md capitalize transition-colors ${
                       previewMealTab === m
                         ? 'bg-[#244D3C] text-white'
-                        : 'text-[#737A74] hover:text-[#292E2A]'
+                        : 'text-[#777D76] hover:text-[#292E2A]'
                     }`}
                   >
                     {m}
@@ -189,7 +189,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                     <ChefHat className="w-3.5 h-3.5 text-[#244D3C]" />
                     <span>{previewMealTab} Course</span>
                   </div>
-                  <div className="flex items-center gap-1 text-[10px] text-[#737A74]">
+                  <div className="flex items-center gap-1 text-[10px] text-[#777D76]">
                     <Clock className="w-3 h-3 text-[#244D3C]" />
                     <span>{activeMenuDisplay.time}</span>
                   </div>
@@ -208,7 +208,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                 <div className="pt-2 border-t border-[#E4E5DE] space-y-2">
                   <div className="flex items-center justify-between text-[11px]">
                     <span className="font-semibold text-[#292E2A]">Rate This Meal</span>
-                    <span className="text-[10px] text-[#737A74]">{previewRating} of 5 Stars</span>
+                    <span className="text-[10px] text-[#777D76]">{previewRating} of 5 Stars</span>
                   </div>
                   <div className="flex items-center justify-center gap-1.5 p-2 rounded-lg bg-[#F6F4EE] border border-[#E4E5DE]">
                     {[1, 2, 3, 4, 5].map((star) => (
@@ -232,26 +232,26 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                   {/* 4 Criteria Sliders Preview */}
                   <div className="grid grid-cols-2 gap-2 text-[10px] pt-1">
                     <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
-                      <span className="text-[#737A74]">Taste</span>
+                      <span className="text-[#777D76]">Taste</span>
                       <span className="font-bold text-[#292E2A]">4.7 ★</span>
                     </div>
                     <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
-                      <span className="text-[#737A74]">Hygiene</span>
+                      <span className="text-[#777D76]">Hygiene</span>
                       <span className="font-bold text-[#292E2A]">4.9 ★</span>
                     </div>
                     <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
-                      <span className="text-[#737A74]">Quantity</span>
+                      <span className="text-[#777D76]">Quantity</span>
                       <span className="font-bold text-[#292E2A]">4.5 ★</span>
                     </div>
                     <div className="p-1.5 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] flex justify-between">
-                      <span className="text-[#737A74]">Quality</span>
+                      <span className="text-[#777D76]">Quality</span>
                       <span className="font-bold text-[#292E2A]">4.6 ★</span>
                     </div>
                   </div>
 
                   <button
                     disabled
-                    className="w-full py-1.5 rounded-md bg-[#E4E5DE] text-[#737A74] text-[10px] font-semibold cursor-not-allowed flex items-center justify-center gap-1"
+                    className="w-full py-1.5 rounded-md bg-[#E4E5DE] text-[#777D76] text-[10px] font-semibold cursor-not-allowed flex items-center justify-center gap-1"
                   >
                     <Lock className="w-3 h-3" />
                     <span>Submit Rating (Disabled in Preview)</span>
@@ -282,7 +282,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                       className="p-2 rounded-md bg-[#F6F4EE] border border-[#E4E5DE] text-[10px] flex items-center justify-between text-[#292E2A]"
                     >
                       <span>{opt}</span>
-                      <span className="text-[#737A74] font-bold">{idx === 0 ? '62%' : '38%'}</span>
+                      <span className="text-[#777D76] font-bold">{idx === 0 ? '62%' : '38%'}</span>
                     </div>
                   ))}
                 </div>
@@ -298,7 +298,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
                   <div className="text-[10px] font-bold text-[#292E2A]">
                     {announcements.length > 0 ? announcements[0].title : 'Sunday Feast Timing Notice'}
                   </div>
-                  <p className="text-[9px] text-[#737A74] leading-snug">
+                  <p className="text-[9px] text-[#777D76] leading-snug">
                     {announcements.length > 0 
                       ? announcements[0].body 
                       : 'Special dinner service starts early at 7:30 PM due to the annual hostel sports meet. Extra ice cream counter will be open.'}
@@ -309,7 +309,7 @@ export const StudentMobilePreview: React.FC<StudentMobilePreviewProps> = ({
             </div>
 
             {/* Bottom Navigation Mock inside Mobile */}
-            <div className="bg-white px-6 py-2.5 border-t border-[#E4E5DE] flex items-center justify-around text-[10px] font-medium text-[#737A74] shrink-0">
+            <div className="bg-white px-6 py-2.5 border-t border-[#E4E5DE] flex items-center justify-around text-[10px] font-medium text-[#777D76] shrink-0">
               <div className="flex flex-col items-center text-[#244D3C]">
                 <ChefHat className="w-3.5 h-3.5" />
                 <span className="text-[9px] mt-0.5 font-bold">Menu</span>

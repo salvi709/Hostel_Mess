@@ -98,7 +98,7 @@ app.post('/api/validate-review', async (req, res) => {
       });
     }
 
-    // Call Gemini 3.8 Flash for Structured Review Evaluation when API key is configured
+    // Call Gemini 3.1 Flash-Lite for fast, reliable Structured Review Evaluation
     const systemInstruction = `You are a strict, expert student dining review evaluator for a university hostel mess feedback system.
 Your job is to determine whether a student's written review contains MEANINGFUL information about:
 - Food taste (e.g. too salty, spicy, sweet, bland, delicious)
@@ -128,7 +128,7 @@ STRICT MANDATORY EXAMPLES:
 
 If the review is only a casual greeting, conversational chat, joke, random questions, phone/shopping talk, or meaningless gibberish, classify it as IRRELEVANT.
 If the review expresses genuine food/mess feedback (positive or negative, even if informal, slang, or short), classify it as RELEVANT.
-If it is ambiguous or too short to tell (e.g. "Maybe", "Okayish"), classify as UNCERTAIN.`;
+If it is ambiguous or too short to tell (e.g. "Maybe", "Okayish", "Okiesh"), classify as UNCERTAIN.`;
 
     const prompt = `Context:
 - Meal Type: ${mealType || 'Not specified'}
@@ -139,8 +139,9 @@ If it is ambiguous or too short to tell (e.g. "Maybe", "Okayish"), classify as U
 Student's written review to evaluate:
 "${trimmed}"`;
 
-    const response = await ai.models.generateContent({
-      model: 'gemini-3.8-flash',
+    // 3.5-second timeout race to prevent UI hanging on network latency or API spikes
+    const generateCall = ai.models.generateContent({
+      model: 'gemini-3.1-flash-lite',
       contents: prompt,
       config: {
         systemInstruction,
@@ -186,6 +187,12 @@ Student's written review to evaluate:
       },
     });
 
+    const timeoutCall = new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error('Gemini API call timed out after 3500ms')), 3500)
+    );
+
+    const response = await Promise.race([generateCall, timeoutCall]);
+
     const parsed: ReviewValidationResult = JSON.parse(response.text || '{}');
 
     // Server-side sanity checks on the LLM output
@@ -201,8 +208,8 @@ Student's written review to evaluate:
 
     return res.json(parsed);
   } catch (err: any) {
-    console.error('Error validating review with Gemini:', err);
-    // On any API error, safely fall back to the deterministic validator
+    console.warn('Gemini review validation fallback activated:', err?.message || err);
+    // On any API error, high demand, or timeout, immediately return the deterministic validation result
     const fallback = validateReviewText(req.body?.reviewText || '');
     return res.json({
       ...fallback,

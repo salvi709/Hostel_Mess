@@ -592,19 +592,19 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                         <span>{r.score}</span>
                         <Star className="w-3.5 h-3.5 fill-[#B77950] text-[#B77950]" />
                       </div>
-                      <span className="text-[#737A74]">·</span>
+                      <span className="text-[#777D76]">·</span>
                       <span className="font-semibold text-[#292E2A] capitalize">{r.mealType}</span>
                       {messInfo && (
                         <>
-                          <span className="text-[#737A74]">·</span>
-                          <span className="text-[#737A74]">{messInfo.name}</span>
+                          <span className="text-[#777D76]">·</span>
+                          <span className="text-[#777D76]">{messInfo.name}</span>
                         </>
                       )}
-                      <span className="text-[#737A74]">·</span>
-                      <span className="text-[#737A74]">{r.serviceDate || r.createdAt?.split('T')[0]}</span>
+                      <span className="text-[#777D76]">·</span>
+                      <span className="text-[#777D76]">{r.serviceDate || r.createdAt?.split('T')[0]}</span>
                     </div>
 
-                    <div className="text-[11px] text-[#737A74]">
+                    <div className="text-[11px] text-[#777D76]">
                       by <span className="font-medium text-[#292E2A]">{r.actorName || 'Student'}</span>
                     </div>
                   </div>
@@ -615,13 +615,13 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
                       "{r.comment}"
                     </p>
                   ) : (
-                    <p className="text-[11px] text-[#737A74] italic">
+                    <p className="text-[11px] text-[#777D76] italic">
                       Star rating submitted with no written remarks.
                     </p>
                   )}
 
                   {/* Criteria tags */}
-                  <div className="flex flex-wrap items-center gap-3 text-[10px] text-[#737A74] pt-1">
+                  <div className="flex flex-wrap items-center gap-3 text-[10px] text-[#777D76] pt-1">
                     {r.taste && <span>Taste: <b className="text-[#292E2A]">{r.taste}★</b></span>}
                     {r.quality && <span>Quality: <b className="text-[#292E2A]">{r.quality}★</b></span>}
                     {r.quantity && <span>Quantity: <b className="text-[#292E2A]">{r.quantity}★</b></span>}
@@ -632,7 +632,7 @@ export const FeedbackAnalytics: React.FC<FeedbackAnalyticsProps> = ({
             })}
           </div>
         ) : (
-          <div className="text-center py-8 text-xs text-[#737A74] bg-[#F6F4EE] rounded-xl border border-[#E4E5DE]">
+          <div className="text-center py-8 text-xs text-[#777D76] bg-[#F6F4EE] rounded-xl border border-[#E4E5DE]">
             No meal feedback matches the active filter criteria.
           </div>
         )}

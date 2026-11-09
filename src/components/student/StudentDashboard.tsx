@@ -233,6 +233,7 @@ export const StudentDashboard: React.FC = () => {
           const valRes = await fetch('/api/validate-review', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
+            signal: AbortSignal.timeout(5000),
             body: JSON.stringify({
               reviewText: trimmedComment,
               mealType: ratingTargetMeal.mealType,
@@ -338,6 +339,7 @@ export const StudentDashboard: React.FC = () => {
         const valRes = await fetch('/api/validate-review', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
+          signal: AbortSignal.timeout(5000),
           body: JSON.stringify({
             reviewText: trimmedBody,
             mealType: activeMealTab,
@@ -434,7 +436,7 @@ export const StudentDashboard: React.FC = () => {
             <h1 className="text-2xl sm:text-3xl font-extrabold text-[#292E2A]">
               Welcome back, {userProfile?.name}!
             </h1>
-            <p className="text-xs text-[#737A74]">
+            <p className="text-xs text-[#777D76]">
               Assigned Hall: <span className="font-semibold text-[#292E2A]">{userProfile?.messName || 'Hostel Dining Hall'}</span> ({userProfile?.collegeName || 'Campus'})
             </p>
           </div>
@@ -505,7 +507,7 @@ export const StudentDashboard: React.FC = () => {
                     className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
                       selectedDay === idx 
                         ? 'bg-[#244D3C] text-white shadow-xs' 
-                        : 'text-[#737A74] hover:bg-[#F6F4EE]'
+                        : 'text-[#777D76] hover:bg-[#F6F4EE]'
                     }`}
                   >
                     {dayName.slice(0, 3)}
@@ -523,7 +525,7 @@ export const StudentDashboard: React.FC = () => {
                   className={`py-2 rounded-md capitalize transition-all cursor-pointer ${
                     activeMealTab === mType
                       ? 'bg-white text-[#244D3C] shadow-xs'
-                      : 'text-[#737A74] hover:text-[#292E2A]'
+                      : 'text-[#777D76] hover:text-[#292E2A]'
                   }`}
                 >
                   {mType}
@@ -539,7 +541,7 @@ export const StudentDashboard: React.FC = () => {
                     <span className="px-2.5 py-0.5 rounded-md bg-[#244D3C] text-white font-semibold text-xs uppercase tracking-wider">
                       {currentMeal.mealType}
                     </span>
-                    <span className="flex items-center gap-1 text-xs text-[#737A74] font-medium">
+                    <span className="flex items-center gap-1 text-xs text-[#777D76] font-medium">
                       <Clock className="w-3.5 h-3.5 text-[#244D3C]" />
                       {currentMeal.startTime} - {currentMeal.endTime}
                     </span>
@@ -552,7 +554,7 @@ export const StudentDashboard: React.FC = () => {
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-[11px] font-semibold text-[#737A74] uppercase tracking-wider">Menu Dishes</div>
+                  <div className="text-[11px] font-semibold text-[#777D76] uppercase tracking-wider">Menu Dishes</div>
                   <p className="text-sm font-bold text-[#292E2A] leading-relaxed">
                     {currentMeal.dishes}
                   </p>
@@ -565,13 +567,13 @@ export const StudentDashboard: React.FC = () => {
                       <CheckCircle2 className="w-4 h-4 text-[#244D3C]" />
                       <span>You rated this meal ({myRatingForActiveMeal.score} ★)</span>
                       {myRatingForActiveMeal.comment && (
-                        <span className="text-[#737A74] font-normal italic truncate max-w-[200px]">
+                        <span className="text-[#777D76] font-normal italic truncate max-w-[200px]">
                           "{myRatingForActiveMeal.comment}"
                         </span>
                       )}
                     </div>
                   ) : (
-                    <div className="text-xs text-[#737A74]">
+                    <div className="text-xs text-[#777D76]">
                       How was today's {currentMeal.mealType}? Your feedback improves tomorrow's menu.
                     </div>
                   )}
@@ -604,7 +606,7 @@ export const StudentDashboard: React.FC = () => {
                 </div>
               </div>
             ) : (
-              <div className="text-center py-12 px-4 bg-[#F6F4EE] rounded-xl border border-dashed border-[#E4E5DE] text-[#737A74] space-y-2">
+              <div className="text-center py-12 px-4 bg-[#F6F4EE] rounded-xl border border-dashed border-[#E4E5DE] text-[#777D76] space-y-2">
                 <UtensilsCrossed className="w-8 h-8 mx-auto text-[#244D3C]/40" />
                 <p className="text-sm font-semibold">No menu scheduled for {activeMealTab} on {daysOfWeek[selectedDay]}.</p>
                 <p className="text-xs">The mess committee will publish updates shortly.</p>
@@ -625,12 +627,12 @@ export const StudentDashboard: React.FC = () => {
                       : '—';
                     return (
                       <div key={m} className="p-3 rounded-lg bg-[#F6F4EE] border border-[#E4E5DE] text-center">
-                        <div className="text-[11px] font-semibold text-[#737A74] capitalize">{m}</div>
+                        <div className="text-[11px] font-semibold text-[#777D76] capitalize">{m}</div>
                         <div className="text-base font-extrabold text-[#244D3C] flex items-center justify-center gap-1 mt-0.5">
                           <span>{avg}</span>
                           {avg !== '—' && <Star className="w-3.5 h-3.5 fill-[#B77950] text-[#B77950]" />}
                         </div>
-                        <div className="text-[10px] text-[#737A74] mt-0.5">{mealR.length} votes</div>
+                        <div className="text-[10px] text-[#777D76] mt-0.5">{mealR.length} votes</div>
                       </div>
                     );
                   })}
@@ -665,7 +667,7 @@ export const StudentDashboard: React.FC = () => {
                       className={`py-2 px-3 rounded-lg text-xs font-semibold border transition-colors cursor-pointer ${
                         feedbackKind === 'complaint'
                           ? 'bg-red-50 border-red-300 text-red-700'
-                          : 'bg-white border-[#E4E5DE] text-[#737A74]'
+                          : 'bg-white border-[#E4E5DE] text-[#777D76]'
                       }`}
                     >
                       Complaint
@@ -676,7 +678,7 @@ export const StudentDashboard: React.FC = () => {
                       className={`py-2 px-3 rounded-lg text-xs font-semibold border transition-colors cursor-pointer ${
                         feedbackKind === 'suggestion'
                           ? 'bg-emerald-50 border-emerald-300 text-emerald-700'
-                          : 'bg-white border-[#E4E5DE] text-[#737A74]'
+                          : 'bg-white border-[#E4E5DE] text-[#777D76]'
                       }`}
                     >
                       Suggestion
@@ -795,7 +797,7 @@ export const StudentDashboard: React.FC = () => {
                   ))}
                 </div>
               ) : (
-                <p className="text-xs text-[#737A74] italic">No grievances filed yet.</p>
+                <p className="text-xs text-[#777D76] italic">No grievances filed yet.</p>
               )}
             </div>
           </div>
@@ -832,7 +834,7 @@ export const StudentDashboard: React.FC = () => {
                     <div key={poll.id} className="p-4 rounded-xl bg-[#F6F4EE] border border-[#E4E5DE] space-y-3">
                       <div>
                         <h3 className="font-bold text-xs text-[#292E2A]">{poll.question}</h3>
-                        <div className="flex items-center justify-between text-[11px] text-[#737A74] mt-1">
+                        <div className="flex items-center justify-between text-[11px] text-[#777D76] mt-1">
                           <span>{totalVotes} student votes</span>
                           {poll.closesAt && <span>Closes: {poll.closesAt}</span>}
                         </div>
@@ -867,7 +869,7 @@ export const StudentDashboard: React.FC = () => {
                               <div className="relative flex items-center justify-between text-xs z-10">
                                 <div className="flex items-center gap-2">
                                   <div className={`w-3.5 h-3.5 rounded-full border flex items-center justify-center ${
-                                    isSelected ? 'border-[#244D3C] bg-[#244D3C]' : 'border-[#737A74]'
+                                    isSelected ? 'border-[#244D3C] bg-[#244D3C]' : 'border-[#777D76]'
                                   }`}>
                                     {isSelected && <div className="w-1.5 h-1.5 rounded-full bg-white" />}
                                   </div>
@@ -895,7 +897,7 @@ export const StudentDashboard: React.FC = () => {
                 })}
               </div>
             ) : (
-              <p className="text-xs text-[#737A74] italic">No active polls at the moment.</p>
+              <p className="text-xs text-[#777D76] italic">No active polls at the moment.</p>
             )}
           </div>
 
@@ -911,11 +913,11 @@ export const StudentDashboard: React.FC = () => {
                 <div key={ann.id} className="p-4 rounded-xl bg-[#F6F4EE] border border-[#E4E5DE] space-y-1.5">
                   <div className="flex items-center justify-between text-xs">
                     <span className="font-bold text-[#292E2A]">{ann.title}</span>
-                    <span className="text-[10px] text-[#737A74]">
+                    <span className="text-[10px] text-[#777D76]">
                       {new Date(ann.createdAt).toLocaleDateString()}
                     </span>
                   </div>
-                  <p className="text-xs text-[#737A74] leading-relaxed">{ann.body}</p>
+                  <p className="text-xs text-[#777D76] leading-relaxed">{ann.body}</p>
                   <div className="text-[10px] text-[#244D3C] font-semibold pt-1">
                     — {ann.authorName}
                   </div>
@@ -936,13 +938,13 @@ export const StudentDashboard: React.FC = () => {
                 <h3 className="font-bold text-base text-[#292E2A] capitalize">
                   {myRatingForActiveMeal ? `Update Today's ${ratingTargetMeal.mealType} Rating` : `Rate Today's ${ratingTargetMeal.mealType}`}
                 </h3>
-                <p className="text-xs text-[#737A74] mt-0.5">
+                <p className="text-xs text-[#777D76] mt-0.5">
                   {ratingTargetMeal.menu?.dishes || 'Served meal course'}
                 </p>
               </div>
               <button 
                 onClick={() => setRatingModalOpen(false)}
-                className="p-1.5 rounded-lg text-[#737A74] hover:bg-black/5 cursor-pointer"
+                className="p-1.5 rounded-lg text-[#777D76] hover:bg-black/5 cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -958,7 +960,7 @@ export const StudentDashboard: React.FC = () => {
             <form onSubmit={handleSubmitRating} className="p-6 space-y-5">
               {/* Overall Star Rating */}
               <div className="text-center space-y-2">
-                <label className="text-xs font-semibold text-[#737A74] uppercase tracking-wider">Overall Satisfaction</label>
+                <label className="text-xs font-semibold text-[#777D76] uppercase tracking-wider">Overall Satisfaction</label>
                 <div className="flex items-center justify-center gap-2">
                   {[1, 2, 3, 4, 5].map((starVal) => (
                     <button
@@ -1096,7 +1098,7 @@ export const StudentDashboard: React.FC = () => {
                     setRatingModalOpen(false);
                     setRatingValidationWarning(null);
                   }}
-                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#737A74] hover:bg-black/5 cursor-pointer"
+                  className="px-4 py-2 rounded-lg text-xs font-semibold text-[#777D76] hover:bg-black/5 cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1125,7 +1127,7 @@ export const StudentDashboard: React.FC = () => {
                   setShowQrModal(false);
                   setCopiedLinkNotice(false);
                 }} 
-                className="p-1 rounded-lg text-[#737A74] hover:bg-black/5 cursor-pointer"
+                className="p-1 rounded-lg text-[#777D76] hover:bg-black/5 cursor-pointer"
               >
                 <X className="w-4 h-4" />
               </button>
@@ -1137,7 +1139,7 @@ export const StudentDashboard: React.FC = () => {
 
             <div>
               <h3 className="font-bold text-sm text-[#292E2A]">{userProfile?.messName}</h3>
-              <p className="text-xs text-[#737A74] mt-1">
+              <p className="text-xs text-[#777D76] mt-1">
                 Scan with any phone camera to open this mess menu and check today's meals.
               </p>
             </div>

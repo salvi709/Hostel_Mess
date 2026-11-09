@@ -224,7 +224,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                   Verified
                 </span>
               </div>
-              <p className="text-xs text-[#737A74]">
+              <p className="text-xs text-[#777D76]">
                 {mode === 'login' 
                   ? 'Access your college mess schedules, ratings & feedback' 
                   : `Step ${signupStep} of 3: ${signupStep === 1 ? 'Admin Account' : signupStep === 2 ? 'Subscription Plan' : 'College Profile'}`}
@@ -233,7 +233,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
           </div>
           <button 
             onClick={onClose}
-            className="p-1.5 rounded-lg text-[#737A74] hover:text-[#292E2A] hover:bg-black/5 transition-colors cursor-pointer"
+            className="p-1.5 rounded-lg text-[#777D76] hover:text-[#292E2A] hover:bg-black/5 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -249,7 +249,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
               className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 mode === 'login' 
                   ? 'bg-white text-[#244D3C] shadow-xs' 
-                  : 'text-[#737A74] hover:text-[#292E2A]'
+                  : 'text-[#777D76] hover:text-[#292E2A]'
               }`}
             >
               Returning Admin Login
@@ -260,7 +260,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
               className={`py-2 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
                 mode === 'signup' 
                   ? 'bg-white text-[#244D3C] shadow-xs' 
-                  : 'text-[#737A74] hover:text-[#292E2A]'
+                  : 'text-[#777D76] hover:text-[#292E2A]'
               }`}
             >
               New College Registration
@@ -325,7 +325,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                   <button
                     type="button"
                     onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#737A74] hover:text-[#292E2A]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#777D76] hover:text-[#292E2A]"
                   >
                     {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                   </button>
@@ -352,7 +352,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
 
               <div className="relative flex items-center justify-center pt-2">
                 <div className="border-t border-[#E4E5DE] w-full"></div>
-                <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#737A74]">
+                <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#777D76]">
                   Or sign in with
                 </span>
               </div>
@@ -388,7 +388,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                 <button
                   type="button"
                   onClick={onSwitchToStudent}
-                  className="text-xs text-[#737A74] hover:text-[#244D3C] transition-colors cursor-pointer"
+                  className="text-xs text-[#777D76] hover:text-[#244D3C] transition-colors cursor-pointer"
                 >
                   Are you a student? <span className="font-semibold underline text-[#244D3C]">Open Student Portal</span>
                 </button>
@@ -458,7 +458,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                       <button
                         type="button"
                         onClick={() => setShowPassword(!showPassword)}
-                        className="absolute right-3 top-1/2 -translate-y-1/2 text-[#737A74]"
+                        className="absolute right-3 top-1/2 -translate-y-1/2 text-[#777D76]"
                       >
                         {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
                       </button>
@@ -482,7 +482,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
 
                   <div className="relative flex items-center justify-center pt-1">
                     <div className="border-t border-[#E4E5DE] w-full"></div>
-                    <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#737A74]">
+                    <span className="bg-white px-3 text-[11px] uppercase font-semibold text-[#777D76]">
                       Or register with
                     </span>
                   </div>
@@ -508,7 +508,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                 <div className="space-y-4">
                   <div className="text-center space-y-1">
                     <h3 className="font-bold text-base text-[#292E2A]">Choose Your MessMate Subscription</h3>
-                    <p className="text-xs text-[#737A74]">
+                    <p className="text-xs text-[#777D76]">
                       Select the tier matching your dining capacity. Enjoy a <b>14-Day Demo Trial</b> with full access.
                     </p>
                   </div>
@@ -533,7 +533,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                           </span>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-[#244D3C]">₹1,500 <span className="text-xs font-normal text-[#737A74]">/ month</span></div>
+                          <div className="text-2xl font-bold text-[#244D3C]">₹1,500 <span className="text-xs font-normal text-[#777D76]">/ month</span></div>
                           <div className="text-[11px] text-emerald-800 font-semibold mt-0.5">Trial Activation: Free for 14 Days</div>
                         </div>
                         <ul className="text-xs space-y-1.5 text-[#292E2A] pt-1">
@@ -580,7 +580,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                           </span>
                         </div>
                         <div>
-                          <div className="text-2xl font-bold text-[#244D3C]">₹2,999 <span className="text-xs font-normal text-[#737A74]">/ month</span></div>
+                          <div className="text-2xl font-bold text-[#244D3C]">₹2,999 <span className="text-xs font-normal text-[#777D76]">/ month</span></div>
                           <div className="text-[11px] text-emerald-800 font-semibold mt-0.5">Trial Activation: Free for 14 Days</div>
                         </div>
                         <ul className="text-xs space-y-1.5 text-[#292E2A] pt-1">
@@ -617,7 +617,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setSignupStep(1)}
-                      className="text-xs font-semibold text-[#737A74] hover:text-[#292E2A]"
+                      className="text-xs font-semibold text-[#777D76] hover:text-[#292E2A]"
                     >
                       ← Back
                     </button>
@@ -636,7 +636,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
               {/* STEP 3: COLLEGE & FIRST MESS PROFILE */}
               {signupStep === 3 && (
                 <form onSubmit={handleFinalOnboarding} className="space-y-4">
-                  <div className="text-xs font-medium text-[#737A74]">
+                  <div className="text-xs font-medium text-[#777D76]">
                     Enter your college name and dining hall details. Your college will be immediately available for students in the search directory.
                   </div>
 
@@ -707,7 +707,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
                     <button
                       type="button"
                       onClick={() => setSignupStep(2)}
-                      className="text-xs font-semibold text-[#737A74] hover:text-[#292E2A]"
+                      className="text-xs font-semibold text-[#777D76] hover:text-[#292E2A]"
                     >
                       ← Back
                     </button>
@@ -736,7 +736,7 @@ export const AdminAuthModal: React.FC<AdminAuthModalProps> = ({
         </div>
 
         {/* Modal Footer Note */}
-        <div className="bg-[#F6F4EE] px-6 py-3 border-t border-[#E4E5DE] text-center text-[11px] text-[#737A74]">
+        <div className="bg-[#F6F4EE] px-6 py-3 border-t border-[#E4E5DE] text-center text-[11px] text-[#777D76]">
           MessMate uses Firebase Authentication and isolated Cloud Firestore multi-tenant security.
         </div>
       </div>
