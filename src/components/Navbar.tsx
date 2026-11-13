@@ -39,60 +39,63 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-6">
         
         {/* Zone 1: Brand Wordmark */}
-        <div 
+        <button
+          type="button"
           onClick={() => {
             setMobileMenuOpen(false);
             if (onNavigate) onNavigate('home');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
           }}
-          className="flex items-center gap-3 cursor-pointer group shrink-0"
+          className="flex items-center gap-2.5 cursor-pointer group shrink-0 text-left focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#244D3C] rounded-lg"
         >
-          <div className="w-8 h-8 rounded-lg bg-[#244D3C] flex items-center justify-center text-white shadow-xs group-hover:bg-[#19382D] transition-colors">
+          <div className="w-8 h-8 rounded-lg bg-[#244D3C] flex items-center justify-center text-white group-hover:bg-[#19382D] transition-colors">
             <UtensilsCrossed className="w-4 h-4 text-white" />
           </div>
-          <div className="flex items-baseline gap-2">
-            <span className="font-extrabold text-lg tracking-tight text-[#292E2A] font-heading">MessMate</span>
-            <span className="text-[11px] text-[#777D76] font-medium hidden sm:inline">
-              Campus Dining OS
-            </span>
-          </div>
-        </div>
+          <span className="font-extrabold text-lg tracking-tight text-[#292E2A] font-heading">MessMate</span>
+        </button>
 
         {/* Zone 2: Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-7 text-xs font-semibold text-[#777D76]">
-          <button 
-            onClick={() => handleScrollTo('features')}
-            className="hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
-          >
-            Features
-          </button>
+        <nav aria-label="Primary Navigation" className="hidden lg:flex items-center gap-6 text-xs font-semibold text-[#777D76]">
           <button 
             onClick={() => handleScrollTo('how-it-works')}
-            className="hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
           >
             How It Works
           </button>
           <button 
+            onClick={() => handleScrollTo('product-experience')}
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Product
+          </button>
+          <button 
+            onClick={() => handleScrollTo('features')}
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+          >
+            Features
+          </button>
+          <button 
             onClick={() => handleScrollTo('benefits')}
-            className="hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
           >
             Benefits
           </button>
           <button 
             onClick={() => handleScrollTo('pricing')}
-            className="hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
           >
             Pricing
           </button>
           <button 
             onClick={() => handleScrollTo('faq')}
-            className="hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
+            className="py-2 hover:text-[#244D3C] transition-colors cursor-pointer whitespace-nowrap"
           >
             FAQ
           </button>
           {userProfile?.messName && (
             <button
               onClick={onOpenMessSelector}
-              className="flex items-center gap-1.5 px-2.5 py-1 rounded-md bg-white border border-[#E4E5DE] text-[#292E2A] hover:border-[#244D3C]/50 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-md bg-white border border-[#E4E5DE] text-[#292E2A] hover:border-[#244D3C]/50 transition-colors cursor-pointer"
               title="Current dining hall"
             >
               <Building2 className="w-3.5 h-3.5 text-[#244D3C]" />
@@ -188,14 +191,14 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
 
         {/* Mobile Hamburger Toggle */}
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 lg:hidden">
           {currentUser && (
             <button
               onClick={() => {
                 if (isAdmin) onNavigate && onNavigate('admin-dashboard');
                 else onNavigate && onNavigate('student-dashboard');
               }}
-              className="px-2.5 py-1 rounded-md bg-[#244D3C] text-white text-[11px] font-semibold"
+              className="sm:hidden px-2.5 py-1.5 rounded-md bg-[#244D3C] text-white text-[11px] font-semibold"
             >
               Dashboard
             </button>
@@ -204,6 +207,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className="p-2 rounded-lg text-[#292E2A] hover:bg-white border border-[#E4E5DE] transition-colors cursor-pointer"
             aria-label="Toggle mobile menu"
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
@@ -211,37 +215,43 @@ export const Navbar: React.FC<NavbarProps> = ({
 
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile & Tablet Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#E4E5DE] bg-white px-4 pt-3 pb-6 space-y-4 shadow-sm animate-in slide-in-from-top-2 duration-150">
-          <nav className="flex flex-col space-y-2 text-sm font-semibold text-[#292E2A]">
-            <button
-              onClick={() => handleScrollTo('features')}
-              className="text-left py-2 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
-            >
-              Features
-            </button>
+        <div className="lg:hidden border-b border-[#E4E5DE] bg-white px-4 pt-3 pb-6 space-y-4 shadow-sm">
+          <nav aria-label="Mobile Navigation" className="flex flex-col space-y-1 text-sm font-semibold text-[#292E2A]">
             <button
               onClick={() => handleScrollTo('how-it-works')}
-              className="text-left py-2 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
             >
               How It Works
             </button>
             <button
+              onClick={() => handleScrollTo('product-experience')}
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+            >
+              Product
+            </button>
+            <button
+              onClick={() => handleScrollTo('features')}
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+            >
+              Features
+            </button>
+            <button
               onClick={() => handleScrollTo('benefits')}
-              className="text-left py-2 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
             >
               Benefits
             </button>
             <button
               onClick={() => handleScrollTo('pricing')}
-              className="text-left py-2 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
             >
               Pricing
             </button>
             <button
               onClick={() => handleScrollTo('faq')}
-              className="text-left py-2 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
+              className="text-left py-2.5 px-3 rounded-md hover:bg-[#F6F4EE] text-[#777D76] hover:text-[#244D3C] cursor-pointer"
             >
               FAQ
             </button>
